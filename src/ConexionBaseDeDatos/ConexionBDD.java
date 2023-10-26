@@ -1,0 +1,25 @@
+
+package ConexionBaseDeDatos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+//CLASE PARA BDD
+public class ConexionBDD {
+    public Connection conexionBDD;
+    
+    //METODO PARA CONECTAR A LA BASE DE DATOS
+    public Connection getConnection() throws ClassNotFoundException, SQLException{
+        //Declaramos los parametros para el DriverManager y GetConnection
+        String usuarioBDD="root";
+        String passwBDD="APM-asta10";
+        String urlBDD = "jdbc:mysql://localhost:3306/prgca";
+        
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conexionBDD = DriverManager.getConnection(urlBDD,usuarioBDD,passwBDD);
+     
+        return conexionBDD;
+    }
+    
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.controllerViewMain">
+    <center>
+        <AnchorPane prefHeight="570.0" prefWidth="369.0" BorderPane.alignment="CENTER">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#588100" height="578.0" layoutX="601.0" layoutY="1.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="56.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#588100" height="578.0" layoutX="-7.0" layoutY="-3.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="70.0" />
+                <Circle fill="#588100" layoutX="629.0" layoutY="538.0" radius="18.0" stroke="#616161" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Button fx:id="SignUpButton" layoutX="69.0" layoutY="426.0" mnemonicParsing="false" onAction="#SignUpOnAction" prefHeight="65.0" prefWidth="527.0" style="-fx-background-color: #588100;" text="Sign Up" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="SignInButton" layoutX="69.0" layoutY="347.0" mnemonicParsing="false" onAction="#SignInOnAction" prefHeight="63.0" prefWidth="527.0" style="-fx-background-color: #588100;" text="Login" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <Circle fill="#588100" layoutX="629.0" layoutY="32.0" radius="18.0" stroke="#616161" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Circle fill="#588100" layoutX="32.0" layoutY="32.0" radius="18.0" stroke="#616161" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Circle fill="#588100" layoutX="32.0" layoutY="538.0" radius="18.0" stroke="#616161" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Label layoutX="189.0" layoutY="224.0" prefHeight="42.0" prefWidth="287.0" text="Bienvenid@ a PRGCA">
+                    <font>
+                        <Font name="Verdana Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Line endX="166.0" endY="-6.0" layoutX="332.0" layoutY="272.0" startX="-166.0" startY="-6.0" stroke="#588100" />
+                <Label layoutX="227.0" layoutY="267.0" prefHeight="42.0" prefWidth="211.0" text="Desea logearse o registrarse?" textFill="#588100">
+                    <font>
+                        <Font name="Verdana" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="203.0" fitWidth="293.0" layoutX="193.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/PRGCA%20COLOR%20VERDE.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
