@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -39,12 +38,11 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label layoutX="25.0" layoutY="282.0" prefHeight="20.0" prefWidth="65.0" text="Rol">
+                <Label layoutX="25.0" layoutY="282.0" prefHeight="20.0" prefWidth="65.0" text="Direccion">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <ComboBox fx:id="comboboxRol" layoutX="127.0" layoutY="280.0" prefHeight="25.0" prefWidth="196.0" promptText="Rol" style="-fx-background-color: #588100;" />
                 <PasswordField fx:id="passwordRegistrar" layoutX="127.0" layoutY="237.0" prefHeight="25.0" prefWidth="197.0" promptText="Password" />
                 <Label layoutX="23.0" layoutY="328.0" text="Correo">
                     <font>
@@ -76,14 +74,15 @@
                 </Circle>
                 <Line endX="100.0" fill="#588100" layoutX="200.0" layoutY="542.0" startX="-126.0" stroke="#588100" />
                 <Label layoutX="103.0" layoutY="518.0" prefHeight="17.0" prefWidth="180.0" text="Developed with JavaFX &amp; MySQL" textFill="#588100" />
-                <Label layoutX="25.0" layoutY="414.0" prefHeight="20.0" prefWidth="95.0" text="ID/NIT">
+                <Label layoutX="25.0" layoutY="414.0" prefHeight="20.0" prefWidth="95.0" text="ID">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
                 <TextField fx:id="idRegistrar" layoutX="126.0" layoutY="412.0" prefWidth="198.0" promptText="Numero de Identificacion" />
-                <Button fx:id="registrarBttn" layoutX="50.0" layoutY="455.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: #588100;" text="Registrar" />
-                <Button fx:id="atrasBttn" layoutX="214.0" layoutY="456.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #588100;" text="Atras" />
+                <Button fx:id="registrarBttn" layoutX="50.0" layoutY="455.0" mnemonicParsing="false" onAction="#registrarBttnOnAction" prefHeight="32.0" prefWidth="114.0" style="-fx-background-color: #588100;" text="Registrar" />
+                <Button fx:id="atrasBttn" layoutX="214.0" layoutY="456.0" mnemonicParsing="false" onAction="#atrasBttnOnAction" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: #588100;" text="Atras" />
+            <TextField fx:id="direccionRegistrar" layoutX="126.0" layoutY="280.0" prefWidth="198.0" promptText="Direccion" />
             </children>
         </AnchorPane>
     </center>
