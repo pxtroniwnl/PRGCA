@@ -1,16 +1,19 @@
 package Controladores;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class controllerViewMain {
+public class controllerViewMain implements Initializable{
 
     //Declaramos los componentes de la interfaz inicial
     @FXML
@@ -57,6 +60,11 @@ public class controllerViewMain {
         //Hacemos display de la interfaz registro
         ventanaRegistro.show();
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
