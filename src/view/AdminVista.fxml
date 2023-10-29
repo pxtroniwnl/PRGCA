@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="988.0" style="-fx-background-radius: 1em;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.controllerAdminVista">
+   <children>
+      <BorderPane prefHeight="639.0" prefWidth="988.0" style="-fx-background-color: #588100;">
+         <center>
+            <StackPane prefHeight="629.0" prefWidth="576.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="paneInformes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="96.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="84.0" text="Informes">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear y eliminar Informes" textFill="#989aad" wrapText="true" />
+                              <Line endX="352.0" layoutX="148.0" layoutY="83.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrar11" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="512.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="48.0" prefHeight="424.0" prefWidth="499.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView prefHeight="258.0" prefWidth="499.0" GridPane.rowIndex="3">
+                                       <columns>
+                                          <TableColumn prefWidth="22.0" text="ID" />
+                                          <TableColumn prefWidth="110.0" text="Contaminante" />
+                                          <TableColumn prefWidth="60.0" text="Localidad" />
+                                          <TableColumn prefWidth="104.0" text="U.Comunera" />
+                                          <TableColumn prefWidth="50.0" text="Barrio" />
+                                          <TableColumn prefWidth="50.0" text="Estado" />
+                                       </columns>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                    <GridPane prefHeight="118.0" prefWidth="499.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="197.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="218.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Contaminante:" style="-fx-background-radius: 1em;" />
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Unidad Comunera:" style="-fx-background-radius: 1em;" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets top="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Barrio:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" top="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" style="-fx-background-radius: 3em; -fx-background-color: #255000;" text="Crear" textFill="WHITE" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets top="15.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Localidad:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane prefHeight="72.0" prefWidth="499.0" GridPane.rowIndex="1">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField prefHeight="20.0" prefWidth="250.0" promptText="Ingrese el ID del Informe:" style="-fx-background-radius: 2em;" />
+                                          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #255000; -fx-background-radius: 3em;" text="Eliminar" textFill="WHITE" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="2">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="214.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="212.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="74.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField promptText="Ingrese ID del Informe:" style="-fx-background-radius: 2em;" />
+                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Contaminante:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Localidad:" style="-fx-background-radius: 2em;" GridPane.rowIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Unidad Comunera:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Barrio:" style="-fx-background-radius: 2em;" GridPane.rowIndex="2" />
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Estado de revision:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="paneReportes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="128.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="84.0" text="Reportes">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear y eliminar reportes" textFill="#989aad" wrapText="true" />
+                              <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrar1" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="457.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="48.0" prefHeight="424.0" prefWidth="499.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="164.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView prefHeight="111.0" prefWidth="499.0" GridPane.rowIndex="3">
+                                       <columns>
+                                          <TableColumn prefWidth="22.0" text="ID" />
+                                          <TableColumn prefWidth="110.0" text="IdCuenta" />
+                                          <TableColumn prefWidth="86.0" text="Contaminante" />
+                                          <TableColumn prefWidth="60.0" text="Localidad" />
+                                          <TableColumn prefWidth="104.0" text="U.Comunera" />
+                                          <TableColumn prefWidth="50.0" text="Barrio" />
+                                          <TableColumn prefWidth="50.0" text="Descrip." />
+                                       </columns>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                    <GridPane prefHeight="118.0" prefWidth="499.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="197.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="218.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="84.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField prefHeight="25.0" prefWidth="170.0" promptText="ID:" style="-fx-background-radius: 2em;" />
+                                          <TextField prefHeight="24.0" prefWidth="182.0" promptText="Descripcion:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Contaminante:" style="-fx-background-radius: 1em;" GridPane.rowIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Localidad:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Unidad Comunera:" style="-fx-background-radius: 1em;" GridPane.rowIndex="2" />
+                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Barrio:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" style="-fx-background-radius: 3em; -fx-background-color: #255000;" text="Crear" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane prefHeight="72.0" prefWidth="499.0" GridPane.rowIndex="1">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField prefHeight="20.0" prefWidth="250.0" promptText="Ingrese el ID del Reporte:" style="-fx-background-radius: 2em;" />
+                                          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #255000; -fx-background-radius: 3em;" text="Eliminar" textFill="WHITE" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="2">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="214.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="215.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="74.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField promptText="ID del reporte que desea editar:" style="-fx-background-radius: 2em;" />
+                                          <TextField promptText="Nueva Descripcion:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" />
+                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Button>
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Contaminante:" style="-fx-background-radius: 2em;" GridPane.rowIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Localidad:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Unidad Comunera:" style="-fx-background-radius: 2em;" GridPane.rowIndex="2" />
+                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Barrio:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Ver Metricas" textFill="WHITE" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets top="25.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="paneMetricas" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="128.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="84.0" text="Metricas">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="57.0" prefWidth="302.0" text="Puedes ver metricas de los reportes (Filtrar por Contaminante, Localidad, U.Comunera y Barrios)" textFill="#989aad" wrapText="true" />
+                              <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrar12" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="457.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox layoutX="19.0" layoutY="4.0" prefHeight="484.0" prefWidth="540.0">
+                                 <children>
+                                    <TableView prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="ID" />
+                                        <TableColumn prefWidth="90.0" text="Contaminante" />
+                                          <TableColumn prefWidth="69.0" text="Localidad" />
+                                          <TableColumn prefWidth="111.0" text="Unidad Comunera" />
+                                          <TableColumn prefWidth="111.0" text="Barrios" />
+                                      </columns>
+                                    </TableView>
+                                    <ComboBox prefWidth="150.0" promptText="Filtrar por:" style="-fx-background-radius: 1em;">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="paneUsuarios" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="169.0" prefWidth="541.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Usuarios">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras ver usuarios y buscarlos" textFill="#989aad" wrapText="true" />
+                              <Label layoutX="47.0" layoutY="123.0" prefHeight="24.0" prefWidth="34.0" text="Hoy">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="352.0" layoutX="148.0" layoutY="155.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrar" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="42.0" layoutY="3.0" prefHeight="418.0" prefWidth="499.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="375.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                      <columns>
+                                        <TableColumn prefWidth="22.0" text="ID" />
+                                        <TableColumn prefWidth="110.0" text="Nombre" />
+                                          <TableColumn prefWidth="73.0" text="Username" />
+                                          <TableColumn prefWidth="73.0" text="Password" />
+                                          <TableColumn prefWidth="75.0" text="Correo" />
+                                          <TableColumn prefWidth="29.0" text="Rol" />
+                                      </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="499.0">
+                                       <children>
+                                          <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" style="-fx-background-color: #ffffff;">
+                                             <graphic>
+                                                <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/symbole-de-la-loupe-vert-300x300.png" />
+                                                   </image>
+                                                   <effect>
+                                                      <DropShadow height="23.93" radius="12.1975" width="26.86">
+                                                         <color>
+                                                            <Color red="0.047636453062295914" green="0.30263158679008484" blue="0.10713531821966171" />
+                                                         </color>
+                                                      </DropShadow>
+                                                   </effect>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <TextField alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="193.0" style="-fx-background-radius: 1em;" />
+                                          <ComboBox prefHeight="26.0" prefWidth="126.0" promptText="Rol" style="-fx-background-radius: 1em; -fx-background-color: #588100;">
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </center>
+         <left>
+            <Pane prefHeight="629.0" prefWidth="396.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="62.0" layoutY="61.0" prefHeight="44.0" prefWidth="236.0" text="Bievenid@ a PRGCA!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="105.0" prefHeight="62.0" prefWidth="242.0" text="Aqui tienes un espacio de las tareas que puedes realizar como Administrador" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Line endX="151.0" fill="BLACK" layoutX="184.0" layoutY="181.0" startX="-124.0" stroke="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Line>
+                  <GridPane layoutX="62.0" layoutY="211.0" prefHeight="168.0" prefWidth="295.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="btnUsuarios" mnemonicParsing="false" onAction="#clickBotones" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Usuarios" textFill="WHITE" />
+                        <Button fx:id="btnInformes" mnemonicParsing="false" onAction="#clickBotones" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Informes" textFill="WHITE" GridPane.columnIndex="2" />
+                        <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#clickBotones" prefHeight="111.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="96.0" layoutY="588.0" prefHeight="27.0" prefWidth="193.0" text="Developed with JavaFX &amp; MySQL" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Line endX="144.0" fill="BLACK" layoutX="155.0" layoutY="615.0" startX="-70.0" stroke="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Line>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="--" textFill="#cdcdcd" />
+                  <ImageView fitHeight="251.0" fitWidth="430.0" layoutX="25.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/PRGCA%20COLOR%20blanco%20.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </left>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>
