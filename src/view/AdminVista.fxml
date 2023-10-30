@@ -19,7 +19,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -332,7 +331,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras ver usuarios y buscarlos" textFill="#989aad" wrapText="true" />
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras crear usuarios y eliminarlos" textFill="#989aad" wrapText="true" />
                               <Label layoutX="47.0" layoutY="123.0" prefHeight="24.0" prefWidth="34.0" text="Hoy">
                                  <font>
                                     <Font size="16.0" />
@@ -346,56 +345,84 @@
                      <center>
                         <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
                            <children>
-                              <GridPane layoutX="42.0" layoutY="3.0" prefHeight="418.0" prefWidth="499.0">
+                              <GridPane layoutX="42.0" layoutY="9.0" prefHeight="412.0" prefWidth="499.0">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
                                 <rowConstraints>
-                                  <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="375.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="256.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                       <columns>
-                                        <TableColumn prefWidth="22.0" text="ID" />
-                                        <TableColumn prefWidth="110.0" text="Nombre" />
-                                          <TableColumn prefWidth="73.0" text="Username" />
-                                          <TableColumn prefWidth="73.0" text="Password" />
-                                          <TableColumn prefWidth="75.0" text="Correo" />
-                                          <TableColumn prefWidth="29.0" text="Rol" />
+                                        <TableColumn text="ID" />
+                                        <TableColumn prefWidth="103.0" text="Nombre" />
+                                          <TableColumn prefWidth="72.0" text="Username" />
+                                          <TableColumn prefWidth="81.0" text="Password" />
+                                          <TableColumn prefWidth="61.0" text="Correo" />
+                                          <TableColumn prefWidth="57.0" text="Rol" />
                                       </columns>
                                     </TableView>
                                     <HBox alignment="CENTER" prefHeight="50.0" prefWidth="499.0">
                                        <children>
-                                          <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" style="-fx-background-color: #ffffff;">
-                                             <graphic>
-                                                <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../images/symbole-de-la-loupe-vert-300x300.png" />
-                                                   </image>
-                                                   <effect>
-                                                      <DropShadow height="23.93" radius="12.1975" width="26.86">
-                                                         <color>
-                                                            <Color red="0.047636453062295914" green="0.30263158679008484" blue="0.10713531821966171" />
-                                                         </color>
-                                                      </DropShadow>
-                                                   </effect>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <TextField alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="193.0" style="-fx-background-radius: 1em;" />
-                                          <ComboBox prefHeight="26.0" prefWidth="126.0" promptText="Rol" style="-fx-background-radius: 1em; -fx-background-color: #588100;">
-                                             <padding>
-                                                <Insets left="5.0" right="5.0" />
-                                             </padding>
-                                             <HBox.margin>
-                                                <Insets left="5.0" />
-                                             </HBox.margin>
-                                          </ComboBox>
+                                          <GridPane prefHeight="214.0" prefWidth="594.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="197.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="211.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="46.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TextField promptText="Ingrese ID del usuario:" style="-fx-background-radius: 2em;" />
+                                                <TextField promptText="Ingrese Nombre Completo:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <TextField promptText="Ingrese Username:" style="-fx-background-radius: 2em;" GridPane.rowIndex="1" />
+                                                <TextField promptText="Ingrese Password:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <ComboBox prefHeight="25.0" prefWidth="316.0" promptText="Rol:" style="-fx-background-radius: 2em;" GridPane.rowIndex="2" />
+                                                <TextField promptText="Ingrese correo:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #255000; -fx-background-radius: 3em;" text="Crear" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </Button>
+                                             </children>
+                                          </GridPane>
+                                          <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" style="-fx-background-color: #ffffff;" />
                                        </children>
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
+                                    </HBox>
+                                    <HBox prefHeight="44.0" prefWidth="499.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <TextField promptText="Ingrese ID del usuario:" style="-fx-background-radius: 2em;">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" top="20.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Eliminar Usuario" textFill="WHITE">
+                                             <HBox.margin>
+                                                <Insets left="5.0" top="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
                                     </HBox>
                                  </children>
                               </GridPane>
