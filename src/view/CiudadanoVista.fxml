@@ -193,11 +193,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnUsuarios" mnemonicParsing="false" onAction="#clickBotones" prefHeight="110.0" prefWidth="259.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Mi Perfil" textFill="WHITE">
+                        <Button fx:id="btnUsuarios" mnemonicParsing="false" prefHeight="110.0" prefWidth="259.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Mi Perfil" textFill="WHITE">
                            <GridPane.margin>
                               <Insets right="10.0" />
                            </GridPane.margin></Button>
-                        <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#clickBotones" prefHeight="111.0" prefWidth="176.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1">
+                        <Button fx:id="btnReportes" mnemonicParsing="false" prefHeight="111.0" prefWidth="176.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Button>
