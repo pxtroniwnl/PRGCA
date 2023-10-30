@@ -2,7 +2,6 @@ package Controladores;
 
 import ConexionBaseDeDatos.ConexionBDD;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
@@ -16,11 +15,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.sql.Statement;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
 import javax.swing.JOptionPane;
 
-public class controllerRegisterForm implements Initializable{
+public class controllerRegisterForm{
 
     //Declaramos los componentes con los que trabajaremos de la Inferfaz registro
     @FXML
@@ -106,8 +103,5 @@ public class controllerRegisterForm implements Initializable{
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

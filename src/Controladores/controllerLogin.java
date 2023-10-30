@@ -2,7 +2,6 @@ package Controladores;
 
 import ConexionBaseDeDatos.ConexionBDD;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javafx.event.ActionEvent;
@@ -13,15 +12,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import java.sql.SQLException;
 import java.sql.Connection;
-import java.util.ResourceBundle;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javax.swing.JOptionPane;
 
-public class controllerLogin implements Initializable{
+public class controllerLogin{
 
     //Declaramos los componentes con los que trabajaremos de la Inferfaz Login
     @FXML
@@ -86,11 +83,6 @@ public class controllerLogin implements Initializable{
             JOptionPane.showConfirmDialog(null, "Usuario no encontrado. Verifica tus credenciales.");
         }
 
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
