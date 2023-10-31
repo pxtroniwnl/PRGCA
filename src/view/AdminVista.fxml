@@ -39,7 +39,7 @@
                               </Label>
                               <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear y eliminar Informes" textFill="#989aad" wrapText="true" />
                               <Line endX="352.0" layoutX="148.0" layoutY="83.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrar1" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Button layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
                            </children>
                         </Pane>
                      </top>
@@ -171,7 +171,7 @@
                               </Label>
                               <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear y eliminar reportes" textFill="#989aad" wrapText="true" />
                               <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrar2" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Button layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
                            </children>
                         </Pane>
                      </top>
@@ -293,7 +293,7 @@
                               </Label>
                               <Label layoutX="47.0" layoutY="57.0" prefHeight="57.0" prefWidth="302.0" text="Puedes ver metricas de los reportes (Filtrar por Contaminante, Localidad, U.Comunera y Barrios)" textFill="#989aad" wrapText="true" />
                               <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrar3" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Button fx:id="btnCerrar3" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
                            </children>
                         </Pane>
                      </top>
@@ -338,7 +338,7 @@
                                  </font>
                               </Label>
                               <Line endX="352.0" layoutX="148.0" layoutY="155.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrar4" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBotones" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Button fx:id="btnCerrar4" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
                            </children>
                         </Pane>
                      </top>
