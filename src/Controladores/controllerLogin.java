@@ -17,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.StageStyle;
+import javafx.stage.Window;
 import javax.swing.JOptionPane;
 
 public class controllerLogin {
@@ -89,17 +91,64 @@ public class controllerLogin {
             switch (idRol) {
                 case 1: // Administrador
                     System.out.println("Administrador");
-                    displayAdmin();
+                    // Aquí cargamos la interfaz del administrador
+
+                    //Creamos una instancia del AdminVista para redirigir luego
+                    Parent rootAdmin = FXMLLoader.load(getClass().getResource("/view/AdminVista.fxml"));
+                    
+                    Stage PrincipalAdmin = new Stage();
+                    PrincipalAdmin.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+                    PrincipalAdmin.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+                    PrincipalAdmin.setScene(new Scene(rootAdmin));
+                    
+                    //obtenemos la ventana actual para cerrarla
+                    Stage stage = (Stage) loginButton.getScene().getWindow();
+                    stage.close();
+
+                    //Hacemos display de la interfaz admin
+                    PrincipalAdmin.show();
                     break;
+
                 case 2: // Entidad Ambiental
                     // Aquí cargamos la interfaz de entidad ambiental
                     System.out.println("Entidad");
-                    displayEntidad();
+                    // Aquí cargamos la interfaz de la Entidad
+
+                    //Creamos una instancia del EntidadVista para redirigir luego
+                    Parent rootEntidad = FXMLLoader.load(getClass().getResource("/view/EntidadVista.fxml"));
+
+                    Stage PrincipalEntidad = new Stage();
+                    PrincipalEntidad.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+                    PrincipalEntidad.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+                    PrincipalEntidad.setScene(new Scene(rootEntidad));
+
+                    //obtenemos la ventana actual para cerrarla
+                    Stage stageActual =  (Stage) loginButton.getScene().getWindow();
+                    stageActual.close();
+
+                    //Hacemos display de la interfaz admin
+                    PrincipalEntidad.show();
                     break;
+                    
                 case 3: // Ciudadano
                     // Aquí cargamos la interfaz de ciudadano
                     System.out.println("Ciudadano");
-                    displayCiudadano();
+                    // Aquí cargamos la interfaz del Ciudadano
+
+                    //Creamos una instancia del CiudadanoVista para redirigir luego
+                    Parent root = FXMLLoader.load(getClass().getResource("/view/CiudadanoVista.fxml"));
+
+                    Stage PrincipalCiudadano = new Stage();
+                    PrincipalCiudadano.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+                    PrincipalCiudadano.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+                    PrincipalCiudadano.setScene(new Scene(root));
+
+                    //obtenemos la ventana actual para cerrarla
+                    Stage stageActual2 = (Stage) loginButton.getScene().getWindow();
+                    stageActual2.close();
+
+                    //Hacemos display de la interfaz admin
+                    PrincipalCiudadano.show();
                     break;
             }
         } else {
@@ -107,63 +156,6 @@ public class controllerLogin {
             JOptionPane.showConfirmDialog(null, "Usuario no encontrado. Verifica tus credenciales.");
         }
 
-    }
-
-    public void displayAdmin() throws IOException {
-            // Aquí cargamos la interfaz del administrador
-
-            //Creamos una instancia del LoginForm para redirigir luego
-            Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista.fxml"));
-
-            Stage PrincipalAdmin = new Stage();
-            PrincipalAdmin.setTitle("Admin - Interfaz");
-            PrincipalAdmin.getIcons().add(new Image("/images/PRGCA.png"));
-            PrincipalAdmin.setScene(new Scene(root));
-
-            //obtenemos la ventana actual para cerrarla
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            stage.close();
-
-            //Hacemos display de la interfaz admin
-            PrincipalAdmin.show();
-    }
-
-    public void displayEntidad() throws IOException {
-        // Aquí cargamos la interfaz de la Entidad
-
-        //Creamos una instancia del LoginForm para redirigir luego
-        Parent root = FXMLLoader.load(getClass().getResource("/view/EntidadVista.fxml"));
-
-        Stage PrincipalEntidad = new Stage();
-        PrincipalEntidad.setTitle("Admin - Interfaz");
-        PrincipalEntidad.getIcons().add(new Image("/images/PRGCA.png"));
-        PrincipalEntidad.setScene(new Scene(root));
-
-        //obtenemos la ventana actual para cerrarla
-        Stage stage = (Stage) loginButton.getScene().getWindow();
-        stage.close();
-
-        //Hacemos display de la interfaz admin
-        PrincipalEntidad.show();
-    }
-
-    public void displayCiudadano() throws IOException {
-        // Aquí cargamos la interfaz del Ciudadano
-
-        //Creamos una instancia del LoginForm para redirigir luego
-        Parent root = FXMLLoader.load(getClass().getResource("/view/CiudadanoVista.fxml"));
-
-        Stage PrincipalCiudadano = new Stage();
-        PrincipalCiudadano.setTitle("Admin - Interfaz");
-        PrincipalCiudadano.getIcons().add(new Image("/images/PRGCA.png"));
-        PrincipalCiudadano.setScene(new Scene(root));
-
-        //obtenemos la ventana actual para cerrarla
-        Stage stage = (Stage) loginButton.getScene().getWindow();
-        stage.close();
-
-        //Hacemos display de la interfaz admin
-        PrincipalCiudadano.show();
     }
 
 }

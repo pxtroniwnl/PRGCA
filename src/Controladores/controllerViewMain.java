@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class controllerViewMain {
 
@@ -26,8 +27,8 @@ public class controllerViewMain {
         Parent root = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
 
         Stage ventanaLogin = new Stage();
-        ventanaLogin.setTitle("Login - Interfaz");
-        ventanaLogin.getIcons().add(new Image("/images/PRGCA.png"));
+        ventanaLogin.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        ventanaLogin.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
         ventanaLogin.setScene(new Scene(root));
 
         //obtenemos la ventana actual para cerrarla
@@ -46,8 +47,8 @@ public class controllerViewMain {
         Parent root = FXMLLoader.load(getClass().getResource("/view/RegisterForm.fxml"));
 
         Stage ventanaRegistro = new Stage();
-        ventanaRegistro.setTitle("Registro - Interfaz");
-        ventanaRegistro.getIcons().add(new Image("/images/PRGCA.png"));
+        ventanaRegistro.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        ventanaRegistro.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
         ventanaRegistro.setScene(new Scene(root));
 
         //obtenemos la ventana actual para cerrarla
