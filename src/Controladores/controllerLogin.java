@@ -22,7 +22,11 @@ import javafx.stage.Window;
 import javax.swing.JOptionPane;
 
 public class controllerLogin {
-
+    
+    //Declaracion de variables para permitir que la ventana se pueda mover sin redimensionarlo
+    private double xOffset = 0;
+    private double yOffset = 0;
+    
     //Declaramos los componentes con los que trabajaremos de la Inferfaz Login
     @FXML
     private Button atrasButton;
@@ -99,6 +103,18 @@ public class controllerLogin {
                     Stage PrincipalAdmin = new Stage();
                     PrincipalAdmin.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
                     PrincipalAdmin.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+                    
+                    // Listener para permitir mover la ventana desde el borde superior con el setResizable en False
+                    rootAdmin.setOnMousePressed(event -> {
+                        xOffset = event.getSceneX();
+                        yOffset = event.getSceneY();
+                    });
+
+                    rootAdmin.setOnMouseDragged(event -> {
+                        PrincipalAdmin.setX(event.getScreenX() - xOffset);
+                        PrincipalAdmin.setY(event.getScreenY() - yOffset);
+                    });
+                    
                     PrincipalAdmin.setScene(new Scene(rootAdmin));
                     
                     //obtenemos la ventana actual para cerrarla
@@ -106,6 +122,7 @@ public class controllerLogin {
                     stage.close();
 
                     //Hacemos display de la interfaz admin
+                    PrincipalAdmin.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
                     PrincipalAdmin.show();
                     break;
 
@@ -120,6 +137,18 @@ public class controllerLogin {
                     Stage PrincipalEntidad = new Stage();
                     PrincipalEntidad.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
                     PrincipalEntidad.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+                    
+                    // Listener para permitir mover la ventana desde el borde superior con el setResizable en False
+                    rootEntidad.setOnMousePressed(event -> {
+                        xOffset = event.getSceneX();
+                        yOffset = event.getSceneY();
+                    });
+
+                    rootEntidad.setOnMouseDragged(event -> {
+                        PrincipalEntidad.setX(event.getScreenX() - xOffset);
+                        PrincipalEntidad.setY(event.getScreenY() - yOffset);
+                    });
+                    
                     PrincipalEntidad.setScene(new Scene(rootEntidad));
 
                     //obtenemos la ventana actual para cerrarla
@@ -127,6 +156,7 @@ public class controllerLogin {
                     stageActual.close();
 
                     //Hacemos display de la interfaz admin
+                    PrincipalEntidad.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
                     PrincipalEntidad.show();
                     break;
                     
@@ -141,6 +171,18 @@ public class controllerLogin {
                     Stage PrincipalCiudadano = new Stage();
                     PrincipalCiudadano.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
                     PrincipalCiudadano.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+                    
+                    // Listener para permitir mover la ventana desde el borde superior con el setResizable en False
+                    root.setOnMousePressed(event -> {
+                        xOffset = event.getSceneX();
+                        yOffset = event.getSceneY();
+                    });
+
+                    root.setOnMouseDragged(event -> {
+                        PrincipalCiudadano.setX(event.getScreenX() - xOffset);
+                        PrincipalCiudadano.setY(event.getScreenY() - yOffset);
+                    });
+                    
                     PrincipalCiudadano.setScene(new Scene(root));
 
                     //obtenemos la ventana actual para cerrarla
@@ -148,6 +190,7 @@ public class controllerLogin {
                     stageActual2.close();
 
                     //Hacemos display de la interfaz admin
+                    PrincipalCiudadano.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
                     PrincipalCiudadano.show();
                     break;
             }

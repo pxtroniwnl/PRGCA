@@ -12,7 +12,11 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class controllerViewMain {
-
+    
+    //Declaracion de variables para permitir que la ventana se pueda mover sin redimensionarlo
+    private double xOffset = 0;
+    private double yOffset = 0;
+    
     //Declaramos los componentes de la interfaz inicial
     @FXML
     private Button SignInButton;
@@ -29,6 +33,18 @@ public class controllerViewMain {
         Stage ventanaLogin = new Stage();
         ventanaLogin.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
         ventanaLogin.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+        
+        // Listener para permitir mover la ventana desde el borde superior con el setResizable en False
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        root.setOnMouseDragged(event -> {
+            ventanaLogin.setX(event.getScreenX() - xOffset);
+            ventanaLogin.setY(event.getScreenY() - yOffset);
+        });
+        
         ventanaLogin.setScene(new Scene(root));
 
         //obtenemos la ventana actual para cerrarla
@@ -36,6 +52,7 @@ public class controllerViewMain {
         stage.close();
 
         //Hacemos display de la interfaz login
+        ventanaLogin.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
         ventanaLogin.show();
 
     }
@@ -49,6 +66,18 @@ public class controllerViewMain {
         Stage ventanaRegistro = new Stage();
         ventanaRegistro.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
         ventanaRegistro.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+        
+        // Listener para permitir mover la ventana desde el borde superior con el setResizable en False
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        root.setOnMouseDragged(event -> {
+            ventanaRegistro.setX(event.getScreenX() - xOffset);
+            ventanaRegistro.setY(event.getScreenY() - yOffset);
+        });
+        
         ventanaRegistro.setScene(new Scene(root));
 
         //obtenemos la ventana actual para cerrarla
@@ -56,6 +85,7 @@ public class controllerViewMain {
         stage.close();
 
         //Hacemos display de la interfaz registro
+        ventanaRegistro.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
         ventanaRegistro.show();
 
     }
