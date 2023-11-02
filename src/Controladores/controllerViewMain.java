@@ -20,7 +20,10 @@ public class controllerViewMain {
     //Declaramos los componentes de la interfaz inicial
     @FXML
     private Button SignInButton;
-
+    
+    @FXML
+    private Button btnCerrar;
+    
     @FXML
     private Button SignUpButton;
 
@@ -88,5 +91,12 @@ public class controllerViewMain {
         ventanaRegistro.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
         ventanaRegistro.show();
 
+    }
+    
+    //METODO DE CERRAR VENTANA
+    public void CerrarVentana(ActionEvent evt){
+        //obtenemos la ventana actual para cerrarla
+        Stage stageActual = (Stage) btnCerrar.getScene().getWindow();
+        stageActual.close(); 
     }
 }
