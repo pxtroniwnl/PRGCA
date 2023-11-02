@@ -41,7 +41,7 @@
                                  </font>
                               </Label>
                               <Line endX="352.0" layoutX="148.0" layoutY="155.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrar4" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Button fx:id="btnCerrarUsuarios" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnCerrarUsuariosAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
                            </children>
                         </Pane>
                      </top>
@@ -72,8 +72,13 @@
                                     </TableView>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <Button fx:id="CrearUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Crear" textFill="WHITE" />
-                                          <Button fx:id="ActualizarBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar" textFill="WHITE">
+                                          <Button fx:id="CrearUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearUsuarioBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Usuario" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                                          <Button fx:id="ActualizarBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActualizarTabla" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar Tabla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="BorrarUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BorrarUsuario" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Borrar Usuarios" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                              <HBox.margin>
                                                 <Insets left="25.0" />
                                              </HBox.margin>
@@ -123,7 +128,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnUsuarios" mnemonicParsing="false" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Usuarios" textFill="WHITE" />
+                        <Button fx:id="btnUsuarios" mnemonicParsing="false" onAction="#btnUsuariosAction" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Usuarios" textFill="WHITE" />
                         <Button fx:id="btnInformes" mnemonicParsing="false" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Informes" textFill="WHITE" GridPane.columnIndex="2" />
                         <Button fx:id="btnReportes" mnemonicParsing="false" prefHeight="111.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1" />
                      </children>

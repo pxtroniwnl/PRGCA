@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.controllerAñadirUsuario">
+    <center>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="190.0" fitWidth="267.0" layoutX="76.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/PRGCA%20COLOR%20VERDE.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="21.0" layoutY="191.0" text="Username">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="usernameRegistrar" layoutX="127.0" layoutY="188.0" prefHeight="25.0" prefWidth="242.0" promptText="Username" />
+                <Label layoutX="18.0" layoutY="228.0" prefHeight="20.0" prefWidth="65.0" text="Password">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="18.0" layoutY="270.0" prefHeight="20.0" prefWidth="65.0" text="Direccion">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="passwordRegistrar" layoutX="127.0" layoutY="225.0" prefHeight="25.0" prefWidth="240.0" promptText="Password" />
+                <Label layoutX="20.0" layoutY="306.0" text="Correo">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="correoRegistrar" layoutX="126.0" layoutY="303.0" prefHeight="25.0" prefWidth="238.0" promptText="mail" />
+                <Label layoutX="21.0" layoutY="344.0" prefHeight="20.0" prefWidth="59.0" text="Telefono">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="telefonoRegistrar" layoutX="126.0" layoutY="341.0" prefHeight="25.0" prefWidth="239.0" promptText="Ej: 301 4678902" />
+                <Label layoutX="19.0" layoutY="139.0" prefHeight="44.0" prefWidth="82.0" text="Nombre Completo" wrapText="true">
+                    <font>
+                        <Font size="12.5" />
+                    </font>
+                </Label>
+                <TextField fx:id="nameRegistrar" layoutX="126.0" layoutY="149.0" prefHeight="25.0" prefWidth="245.0" promptText="Nombre" />
+                <Circle fill="#ffffff00" layoutX="42.0" layoutY="544.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Circle fill="#ffffff00" layoutX="371.0" layoutY="545.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Line endX="100.0" fill="#588100" layoutX="227.0" layoutY="562.0" startX="-126.0" stroke="#588100" />
+                <Label layoutX="124.0" layoutY="536.0" prefHeight="17.0" prefWidth="180.0" text="Developed with JavaFX &amp; MySQL" textFill="#588100" />
+                <Label layoutX="26.0" layoutY="378.0" prefHeight="20.0" prefWidth="95.0" text="ID">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="idRegistrar" layoutX="126.0" layoutY="375.0" prefHeight="25.0" prefWidth="236.0" promptText="Numero de Identificacion" />
+                <Button fx:id="registrarBttn" layoutX="64.0" layoutY="456.0" mnemonicParsing="false" onAction="#crearUsuarioOnAction" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #588100;" text="Añadir" textFill="WHITE" />
+                <Button fx:id="atrasBttn" layoutX="237.0" layoutY="457.0" mnemonicParsing="false" onAction="#atrasBttnOnAction" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #588100;" text="Atras" textFill="WHITE" />
+            <TextField fx:id="direccionRegistrar" layoutX="126.0" layoutY="267.0" prefHeight="25.0" prefWidth="240.0" promptText="Direccion" />
+            <ComboBox fx:id="rolComboBox" layoutX="127.0" layoutY="413.0" prefHeight="25.0" prefWidth="229.0" promptText="Rol" style="-fx-background-radius: 2em;" />
+            <Label layoutX="23.0" layoutY="415.0" prefHeight="20.0" prefWidth="54.0" text="Rol">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <right>
+        <AnchorPane prefHeight="559.0" prefWidth="50.0" style="-fx-background-color: #588100;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#ffffff00" layoutX="25.0" layoutY="32.0" radius="18.0" stroke="#d7d7d7" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+            </children>
+        </AnchorPane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="559.0" prefWidth="50.0" style="-fx-background-color: #588100;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#ffffff00" layoutX="25.0" layoutY="32.0" radius="18.0" stroke="#d7d7d7" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>
