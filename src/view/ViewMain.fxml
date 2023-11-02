@@ -64,6 +64,7 @@
                         <Image url="@../images/PRGCA%20COLOR%20VERDE.png" />
                     </image>
                 </ImageView>
+            <Button fx:id="btnCerrar" layoutX="574.0" layoutY="20.0" mnemonicParsing="false" onAction="#CerrarVentana" style="-fx-background-color: #588100;" text="x" textFill="WHITE" />
             </children>
         </AnchorPane>
     </center>
