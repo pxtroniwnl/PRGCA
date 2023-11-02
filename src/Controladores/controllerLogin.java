@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.StageStyle;
-import javafx.stage.Window;
 import javax.swing.JOptionPane;
 
 public class controllerLogin {
@@ -61,17 +60,31 @@ public class controllerLogin {
         //Creamos una instancia del ViewMain y ubicamos el archivo para redirigir luego
         Parent root = FXMLLoader.load(getClass().getResource("/view/ViewMain.fxml"));
 
-        Stage ventanaInicio = new Stage();
-        ventanaInicio.setTitle("Inicio - Interfaz");
-        ventanaInicio.getIcons().add(new Image("/images/PRGCA.png"));
-        ventanaInicio.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        
+        Stage VentanaInicio = new Stage();
+        
+        VentanaInicio.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        VentanaInicio.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+        
+        // Listener para permitir mover la ventana desde el borde superior
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
 
+        root.setOnMouseDragged(event -> {
+            VentanaInicio.setX(event.getScreenX() - xOffset);
+            VentanaInicio.setY(event.getScreenY() - yOffset);
+        });
+        
         //obtenemos la ventana actual para cerrarla
         Stage stage = (Stage) atrasButton.getScene().getWindow();
         stage.close();
-
-        //Hacemos display de la interfaz inicio nuevamente
-        ventanaInicio.show();
+        
+        VentanaInicio.setScene(scene);
+        VentanaInicio.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
+        VentanaInicio.show();
     }
 
     //METODO PARA VERIFICAR LOS DATOS (Evento en Interfaz)

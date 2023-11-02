@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 //CLASE PARA BDD
 public class ConexionBDD {
-    public Connection conexionBDD;
+    private Connection conexionBDD;
     
     //METODO PARA CONECTAR A LA BASE DE DATOS
     public Connection getConnection() throws ClassNotFoundException, SQLException{

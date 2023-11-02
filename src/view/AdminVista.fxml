@@ -2,11 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,7 +16,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -28,300 +25,6 @@
          <center>
             <StackPane prefHeight="629.0" prefWidth="576.0" BorderPane.alignment="CENTER">
                <children>
-                  <BorderPane fx:id="paneInformes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
-                     <top>
-                        <Pane prefHeight="96.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="84.0" text="Informes">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear y eliminar Informes" textFill="#989aad" wrapText="true" />
-                              <Line endX="352.0" layoutX="148.0" layoutY="83.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
-                           </children>
-                        </Pane>
-                     </top>
-                     <center>
-                        <AnchorPane prefHeight="512.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <GridPane layoutX="48.0" prefHeight="424.0" prefWidth="499.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <TableView prefHeight="258.0" prefWidth="499.0" GridPane.rowIndex="3">
-                                       <columns>
-                                          <TableColumn prefWidth="22.0" text="ID" />
-                                          <TableColumn prefWidth="110.0" text="Contaminante" />
-                                          <TableColumn prefWidth="60.0" text="Localidad" />
-                                          <TableColumn prefWidth="104.0" text="U.Comunera" />
-                                          <TableColumn prefWidth="50.0" text="Barrio" />
-                                          <TableColumn prefWidth="50.0" text="Estado" />
-                                       </columns>
-                                       <GridPane.margin>
-                                          <Insets top="10.0" />
-                                       </GridPane.margin>
-                                    </TableView>
-                                    <GridPane prefHeight="118.0" prefWidth="499.0">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="197.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="218.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Contaminante:" style="-fx-background-radius: 1em;" />
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Unidad Comunera:" style="-fx-background-radius: 1em;" GridPane.rowIndex="1">
-                                             <GridPane.margin>
-                                                <Insets top="5.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Barrio:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" top="5.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" style="-fx-background-radius: 3em; -fx-background-color: #255000;" text="Crear" textFill="WHITE" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets top="15.0" />
-                                             </GridPane.margin>
-                                          </Button>
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Localidad:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" />
-                                       </children>
-                                    </GridPane>
-                                    <GridPane prefHeight="72.0" prefWidth="499.0" GridPane.rowIndex="1">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <TextField prefHeight="20.0" prefWidth="250.0" promptText="Ingrese el ID del Informe:" style="-fx-background-radius: 2em;" />
-                                          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #255000; -fx-background-radius: 3em;" text="Eliminar" textFill="WHITE" GridPane.columnIndex="1">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </Button>
-                                       </children>
-                                    </GridPane>
-                                    <GridPane GridPane.rowIndex="2">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="214.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="212.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="74.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <TextField promptText="Ingrese ID del Informe:" style="-fx-background-radius: 2em;" />
-                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </Button>
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Contaminante:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Localidad:" style="-fx-background-radius: 2em;" GridPane.rowIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Unidad Comunera:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Barrio:" style="-fx-background-radius: 2em;" GridPane.rowIndex="2" />
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Estado de revision:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                       </children>
-                                    </GridPane>
-                                 </children>
-                              </GridPane>
-                           </children>
-                        </AnchorPane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane fx:id="paneReportes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
-                     <top>
-                        <Pane prefHeight="128.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="84.0" text="Reportes">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear y eliminar reportes" textFill="#989aad" wrapText="true" />
-                              <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
-                           </children>
-                        </Pane>
-                     </top>
-                     <center>
-                        <AnchorPane prefHeight="457.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <GridPane layoutX="48.0" prefHeight="424.0" prefWidth="499.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints maxHeight="206.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="164.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <TableView prefHeight="111.0" prefWidth="499.0" GridPane.rowIndex="3">
-                                       <columns>
-                                          <TableColumn prefWidth="22.0" text="ID" />
-                                          <TableColumn prefWidth="110.0" text="IdCuenta" />
-                                          <TableColumn prefWidth="86.0" text="Contaminante" />
-                                          <TableColumn prefWidth="60.0" text="Localidad" />
-                                          <TableColumn prefWidth="104.0" text="U.Comunera" />
-                                          <TableColumn prefWidth="50.0" text="Barrio" />
-                                          <TableColumn prefWidth="50.0" text="Descrip." />
-                                       </columns>
-                                       <GridPane.margin>
-                                          <Insets top="10.0" />
-                                       </GridPane.margin>
-                                    </TableView>
-                                    <GridPane prefHeight="118.0" prefWidth="499.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="197.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="218.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="84.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <TextField prefHeight="25.0" prefWidth="170.0" promptText="ID:" style="-fx-background-radius: 2em;" />
-                                          <TextField prefHeight="24.0" prefWidth="182.0" promptText="Descripcion:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Contaminante:" style="-fx-background-radius: 1em;" GridPane.rowIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Localidad:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Unidad Comunera:" style="-fx-background-radius: 1em;" GridPane.rowIndex="2" />
-                                          <ComboBox prefHeight="25.0" prefWidth="270.0" promptText="Barrio:" style="-fx-background-radius: 1em;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" style="-fx-background-radius: 3em; -fx-background-color: #255000;" text="Crear" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </Button>
-                                       </children>
-                                    </GridPane>
-                                    <GridPane prefHeight="72.0" prefWidth="499.0" GridPane.rowIndex="1">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <TextField prefHeight="20.0" prefWidth="250.0" promptText="Ingrese el ID del Reporte:" style="-fx-background-radius: 2em;" />
-                                          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #255000; -fx-background-radius: 3em;" text="Eliminar" textFill="WHITE" GridPane.columnIndex="1">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </Button>
-                                       </children>
-                                    </GridPane>
-                                    <GridPane GridPane.rowIndex="2">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="214.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="215.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="74.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <TextField promptText="ID del reporte que desea editar:" style="-fx-background-radius: 2em;" />
-                                          <TextField promptText="Nueva Descripcion:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" />
-                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets left="5.0" />
-                                             </GridPane.margin>
-                                          </Button>
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Contaminante:" style="-fx-background-radius: 2em;" GridPane.rowIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Localidad:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nueva Unidad Comunera:" style="-fx-background-radius: 2em;" GridPane.rowIndex="2" />
-                                          <ComboBox prefHeight="25.0" prefWidth="250.0" promptText="Nuevo Barrio:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                       </children>
-                                    </GridPane>
-                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Ver Metricas" textFill="WHITE" GridPane.rowIndex="4">
-                                       <GridPane.margin>
-                                          <Insets top="25.0" />
-                                       </GridPane.margin>
-                                    </Button>
-                                 </children>
-                              </GridPane>
-                           </children>
-                        </AnchorPane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane fx:id="paneMetricas" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
-                     <top>
-                        <Pane prefHeight="128.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="84.0" text="Metricas">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="57.0" prefWidth="302.0" text="Puedes ver metricas de los reportes (Filtrar por Contaminante, Localidad, U.Comunera y Barrios)" textFill="#989aad" wrapText="true" />
-                              <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrar3" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
-                           </children>
-                        </Pane>
-                     </top>
-                     <center>
-                        <AnchorPane prefHeight="457.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <VBox layoutX="19.0" layoutY="4.0" prefHeight="484.0" prefWidth="540.0">
-                                 <children>
-                                    <TableView prefHeight="200.0" prefWidth="200.0">
-                                      <columns>
-                                        <TableColumn prefWidth="75.0" text="ID" />
-                                        <TableColumn prefWidth="90.0" text="Contaminante" />
-                                          <TableColumn prefWidth="69.0" text="Localidad" />
-                                          <TableColumn prefWidth="111.0" text="Unidad Comunera" />
-                                          <TableColumn prefWidth="111.0" text="Barrios" />
-                                      </columns>
-                                    </TableView>
-                                    <ComboBox prefWidth="150.0" promptText="Filtrar por:" style="-fx-background-radius: 1em;">
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                    </ComboBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </center>
-                  </BorderPane>
                   <BorderPane fx:id="paneUsuarios" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
                      <top>
                         <Pane prefHeight="169.0" prefWidth="541.0" BorderPane.alignment="CENTER">
@@ -350,76 +53,29 @@
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
                                 <rowConstraints>
-                                  <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="256.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="349.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <TableView fx:id="UsuariosTable" prefHeight="341.0" prefWidth="515.0" GridPane.rowIndex="1">
                                       <columns>
-                                        <TableColumn text="ID" />
-                                        <TableColumn prefWidth="103.0" text="Nombre" />
-                                          <TableColumn prefWidth="72.0" text="Username" />
-                                          <TableColumn prefWidth="81.0" text="Password" />
-                                          <TableColumn prefWidth="61.0" text="Correo" />
-                                          <TableColumn prefWidth="57.0" text="Rol" />
+                                        <TableColumn fx:id="idUsuario" text="ID" />
+                                        <TableColumn fx:id="NombreUsuario" prefWidth="103.0" text="Nombre" />
+                                          <TableColumn fx:id="UsernameUsuario" prefWidth="72.0" text="Username" />
+                                          <TableColumn fx:id="PasswordUsuario" prefWidth="81.0" text="Password" />
+                                          <TableColumn fx:id="CorreoUsuario" prefWidth="61.0" text="Correo" />
+                                          <TableColumn fx:id="id_rolUsuario" prefWidth="57.0" text="id_rol" />
                                       </columns>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
                                     </TableView>
-                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="499.0">
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <GridPane prefHeight="214.0" prefWidth="594.0">
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="197.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="211.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="46.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
-                                             <children>
-                                                <TextField promptText="Ingrese ID del usuario:" style="-fx-background-radius: 2em;" />
-                                                <TextField promptText="Ingrese Nombre Completo:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1">
-                                                   <GridPane.margin>
-                                                      <Insets left="5.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField promptText="Ingrese Username:" style="-fx-background-radius: 2em;" GridPane.rowIndex="1" />
-                                                <TextField promptText="Ingrese Password:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                   <GridPane.margin>
-                                                      <Insets left="5.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <ComboBox prefHeight="25.0" prefWidth="316.0" promptText="Rol:" style="-fx-background-radius: 2em;" GridPane.rowIndex="2" />
-                                                <TextField promptText="Ingrese correo:" style="-fx-background-radius: 2em;" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                   <GridPane.margin>
-                                                      <Insets left="5.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #255000; -fx-background-radius: 3em;" text="Crear" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                                   <GridPane.margin>
-                                                      <Insets left="5.0" />
-                                                   </GridPane.margin>
-                                                </Button>
-                                             </children>
-                                          </GridPane>
-                                          <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" style="-fx-background-color: #ffffff;" />
-                                       </children>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </HBox>
-                                    <HBox prefHeight="44.0" prefWidth="499.0" GridPane.rowIndex="1">
-                                       <children>
-                                          <TextField promptText="Ingrese ID del usuario:" style="-fx-background-radius: 2em;">
+                                          <Button fx:id="CrearUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Crear" textFill="WHITE" />
+                                          <Button fx:id="ActualizarBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar" textFill="WHITE">
                                              <HBox.margin>
-                                                <Insets bottom="10.0" top="20.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <Button mnemonicParsing="false" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Eliminar Usuario" textFill="WHITE">
-                                             <HBox.margin>
-                                                <Insets left="5.0" top="20.0" />
+                                                <Insets left="25.0" />
                                              </HBox.margin>
                                           </Button>
                                        </children>
