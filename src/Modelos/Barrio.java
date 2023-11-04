@@ -19,6 +19,13 @@ public class Barrio {
         this.unidad_id = unidad_id;
     }
 
+    public Barrio(int idBarrio, String nombreBarrio) {
+        this.idBarrio = idBarrio;
+        this.nombreBarrio = nombreBarrio;
+    }
+    
+    
+
     public int getIdBarrio() {
         return idBarrio;
     }

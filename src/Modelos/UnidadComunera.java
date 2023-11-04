@@ -19,6 +19,13 @@ public class UnidadComunera {
         this.localidad_id = localidad_id;
     }
 
+    public UnidadComunera(int idUnidad, String nombreUnidad) {
+        this.idUnidad = idUnidad;
+        this.nombreUnidad = nombreUnidad;
+    }
+    
+    
+
     public int getIdUnidad() {
         return idUnidad;
     }

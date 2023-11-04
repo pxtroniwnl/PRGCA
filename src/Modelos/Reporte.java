@@ -11,19 +11,19 @@ package Modelos;
 public class Reporte {
     private int idReporte;
     private int idUsuario;
-    private int contaminanteID;
-    private int localidadID;
-    private int unidadID;
-    private int barrioID;
+    private String contaminante;
+    private String localidad;
+    private String unidad;
+    private String barrio;
     private String Descripcion;
 
-    public Reporte(int idReporte, int idUsuario, int contaminanteID, int localidadID, int unidadID, int barrioID, String Descripcion) {
+    public Reporte(int idReporte, int idUsuario, String contaminante, String localidad, String unidad, String barrio, String Descripcion) {
         this.idReporte = idReporte;
         this.idUsuario = idUsuario;
-        this.contaminanteID = contaminanteID;
-        this.localidadID = localidadID;
-        this.unidadID = unidadID;
-        this.barrioID = barrioID;
+        this.contaminante = contaminante;
+        this.localidad = localidad;
+        this.unidad = unidad;
+        this.barrio = barrio;
         this.Descripcion = Descripcion;
     }
 
@@ -43,36 +43,36 @@ public class Reporte {
         this.idUsuario = idUsuario;
     }
 
-    public int getContaminanteID() {
-        return contaminanteID;
+    public String getContaminante() {
+        return contaminante;
     }
 
-    public void setContaminanteID(int contaminanteID) {
-        this.contaminanteID = contaminanteID;
+    public void setContaminante(String contaminante) {
+        this.contaminante = contaminante;
     }
 
-    public int getLocalidadID() {
-        return localidadID;
+    public String getLocalidad() {
+        return localidad;
     }
 
-    public void setLocalidadID(int localidadID) {
-        this.localidadID = localidadID;
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
     }
 
-    public int getUnidadID() {
-        return unidadID;
+    public String getUnidad() {
+        return unidad;
     }
 
-    public void setUnidadID(int unidadID) {
-        this.unidadID = unidadID;
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
     }
 
-    public int getBarrioID() {
-        return barrioID;
+    public String getBarrio() {
+        return barrio;
     }
 
-    public void setBarrioID(int barrioID) {
-        this.barrioID = barrioID;
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
     }
 
     public String getDescripcion() {
@@ -85,9 +85,9 @@ public class Reporte {
 
     @Override
     public String toString() {
-        return "Reporte{" + "idReporte=" + idReporte + ", idUsuario=" + idUsuario + ", contaminanteID=" + 
-                contaminanteID + ", localidadID=" + localidadID + ", unidadID=" + unidadID + ", barrioID=" + barrioID + ", Descripcion=" + Descripcion + '}';
+        return "Reporte{" + "idReporte=" + idReporte + ", idUsuario=" + idUsuario + ", contaminante=" + contaminante + ", localidad=" + localidad + ", unidad=" + unidad + ", barrio=" + barrio + ", Descripcion=" + Descripcion + '}';
     }
+
     
     
 }
