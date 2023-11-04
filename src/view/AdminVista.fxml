@@ -125,12 +125,13 @@
                                  <children>
                                     <TableView fx:id="reportesTable" prefHeight="360.0" prefWidth="499.0" GridPane.rowIndex="1">
                                        <columns>
-                                          <TableColumn fx:id="idReporteCol" text="ID" />
-                                          <TableColumn fx:id="idCiudadanoCol" prefWidth="103.0" text=" idCiudadano" />
-                                          <TableColumn fx:id="LocalidadCol" prefWidth="72.0" text="Localidad" />
-                                          <TableColumn fx:id="UnidadComunCol" prefWidth="81.0" text="Unidad Comunera" />
-                                          <TableColumn fx:id="BarrioCol" prefWidth="61.0" text="Barrio" />
-                                          <TableColumn fx:id="DescripcionCol" prefWidth="57.0" text="Descripcion" />
+                                          <TableColumn fx:id="idReporteCol" prefWidth="52.0" text="ID" />
+                                          <TableColumn fx:id="idUsuarioCol" prefWidth="53.0" text="Usuario" />
+                                          <TableColumn fx:id="contaminanteCol" prefWidth="61.0" text="Contaminante" />
+                                          <TableColumn fx:id="LocalidadCol" prefWidth="84.0" text="Localidad" />
+                                          <TableColumn fx:id="UnidadComunCol" prefWidth="87.0" text="Unidad Comunera" />
+                                          <TableColumn fx:id="BarrioCol" prefWidth="60.0" text="Barrio" />
+                                          <TableColumn fx:id="DescripcionCol" prefWidth="101.0" text="Descripcion" />
                                        </columns>
                                        <GridPane.margin>
                                           <Insets top="10.0" />
@@ -138,7 +139,7 @@
                                     </TableView>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <Button fx:id="CrearUsuarioBtn1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearReporteBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                                          <Button fx:id="CrearReporteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearReporteBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
                                           <Button fx:id="ActualizarBtnReportes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActualizarTablaReportes" prefHeight="57.0" prefWidth="121.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar Tabla de Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                              <HBox.margin>
                                                 <Insets left="25.0" />
