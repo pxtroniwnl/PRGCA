@@ -83,7 +83,7 @@ public class controllerAñadirUsuario implements Initializable{
                 System.out.println("Por favor, seleccione un rol.");
             } else {
                 System.out.println("Intentaste registrarte como " + rolSeleccionado.getNombre());
-                añadirUsuario(); // Llama al método para validar el registro
+                añadirUsuario(); //Llamar al metodo que Inserta los datos
             }
         }
     }
@@ -106,10 +106,10 @@ public class controllerAñadirUsuario implements Initializable{
         //Instanciamos de tipo statement para la consola
         Statement instancia = (Statement) conectarBDD.createStatement();
 
-        int resultadoQuery = instancia.executeUpdate(consultaQuery);
+        int rQ = instancia.executeUpdate(consultaQuery);
 
         //CONDICIONAL PARA SABER SI SE ENCONTRO EL USUARIO O NO (DEPENDIENDO DE LAS FILAS)
-        if (resultadoQuery > 0) {
+        if (rQ > 0) {
             // Si se encontró un usuario, la consulta devolverá al menos una fila
             JOptionPane.showConfirmDialog(null, "¡Usuario registrado!");
             Stage stage = (Stage) registrarBttn.getScene().getWindow();
