@@ -9,7 +9,7 @@ package Modelos;
  * @author ALEJANDRO PATRON
  */
 public class Reporte {
-    private int idReporte;
+    private int idReportes;
     private int idUsuario;
     private String contaminante;
     private String localidad;
@@ -18,7 +18,7 @@ public class Reporte {
     private String Descripcion;
 
     public Reporte(int idReporte, int idUsuario, String contaminante, String localidad, String unidad, String barrio, String Descripcion) {
-        this.idReporte = idReporte;
+        this.idReportes = idReporte;
         this.idUsuario = idUsuario;
         this.contaminante = contaminante;
         this.localidad = localidad;
@@ -28,11 +28,11 @@ public class Reporte {
     }
 
     public int getIdReporte() {
-        return idReporte;
+        return idReportes;
     }
 
     public void setIdReporte(int idReporte) {
-        this.idReporte = idReporte;
+        this.idReportes = idReporte;
     }
 
     public int getIdUsuario() {
@@ -85,7 +85,7 @@ public class Reporte {
 
     @Override
     public String toString() {
-        return "Reporte{" + "idReporte=" + idReporte + ", idUsuario=" + idUsuario + ", contaminante=" + contaminante + ", localidad=" + localidad + ", unidad=" + unidad + ", barrio=" + barrio + ", Descripcion=" + Descripcion + '}';
+        return "Reporte{" + "idReporte=" + idReportes + ", idUsuario=" + idUsuario + ", contaminante=" + contaminante + ", localidad=" + localidad + ", unidad=" + unidad + ", barrio=" + barrio + ", Descripcion=" + Descripcion + '}';
     }
 
     
