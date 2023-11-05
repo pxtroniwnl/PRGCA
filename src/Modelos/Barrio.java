@@ -52,7 +52,7 @@ public class Barrio {
 
     @Override
     public String toString() {
-        return "Barrio{" + "idBarrio=" + idBarrio + ", nombreBarrio=" + nombreBarrio + ", unidad_id=" + unidad_id + '}';
+        return nombreBarrio;
     }
     
     
