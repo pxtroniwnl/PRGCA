@@ -27,11 +27,11 @@ public class Reporte {
         this.Descripcion = Descripcion;
     }
 
-    public int getIdReporte() {
+    public int getIdReportes() {
         return idReportes;
     }
 
-    public void setIdReporte(int idReporte) {
+    public void setIdReportes(int idReporte) {
         this.idReportes = idReporte;
     }
 
