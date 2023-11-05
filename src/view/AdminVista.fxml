@@ -25,6 +25,129 @@
          <center>
             <StackPane prefHeight="629.0" prefWidth="576.0" BorderPane.alignment="CENTER">
                <children>
+                  <BorderPane fx:id="paneReportes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="134.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Reportes">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras crear reportes" textFill="#989aad" wrapText="true" />
+                              <Label layoutX="48.0" layoutY="85.0" prefHeight="24.0" prefWidth="34.0" text="Hoy">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="352.0" layoutX="149.0" layoutY="123.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrarReportes" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnCerrarReportesAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="42.0" layoutY="9.0" prefHeight="412.0" prefWidth="499.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="349.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="reportesTable" prefHeight="360.0" prefWidth="499.0" GridPane.rowIndex="1">
+                                       <columns>
+                                          <TableColumn fx:id="idReporteCol" prefWidth="52.0" text="ID" />
+                                          <TableColumn fx:id="idUsuarioCol" prefWidth="53.0" text="Usuario" />
+                                          <TableColumn fx:id="contaminanteCol" prefWidth="61.0" text="Contaminante" />
+                                          <TableColumn fx:id="LocalidadCol" prefWidth="84.0" text="Localidad" />
+                                          <TableColumn fx:id="UnidadComunCol" prefWidth="87.0" text="Unidad Comunera" />
+                                          <TableColumn fx:id="BarrioCol" prefWidth="60.0" text="Barrio" />
+                                          <TableColumn fx:id="DescripcionCol" prefWidth="101.0" text="Descripcion" />
+                                       </columns>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="CrearReporteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearReporteBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                                          <Button fx:id="ActualizarBtnReportes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActualizarTablaReportes" prefHeight="57.0" prefWidth="121.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar Tabla de Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="paneInformes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="85.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Informes">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras crear, editar y eliminar Informes" textFill="#989aad" wrapText="true" />
+                              <Button fx:id="btnCerrarInforme" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnCerrarInformesOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="42.0" layoutY="9.0" prefHeight="412.0" prefWidth="499.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="349.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="InformesTable" prefHeight="360.0" prefWidth="499.0" GridPane.rowIndex="1">
+                                       <columns>
+                                          <TableColumn fx:id="IdInformeCol" prefWidth="31.0" text="ID" />
+                                          <TableColumn fx:id="ContamInformeCol" prefWidth="113.0" text="Contaminante" />
+                                          <TableColumn fx:id="LocalidadInformeCol" text="Localidad" />
+                                          <TableColumn fx:id="UnidadComunInformeCol" prefWidth="71.0" text="Unidad Comunera" />
+                                          <TableColumn fx:id="BarrioInformeCol" prefWidth="60.0" text="Barrio" />
+                                          <TableColumn fx:id="ValoracionInformeCol" prefWidth="78.0" text="Valoracion" />
+                                          <TableColumn fx:id="EstadoInformeCol" prefWidth="65.0" text="Estado" />
+                                       </columns>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="CrearInformeBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Informes" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                                          <Button fx:id="EditarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0" prefWidth="92.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar Informes" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="EliminarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Eliminar Informe" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
                   <BorderPane fx:id="paneUsuarios" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
                      <top>
                         <Pane prefHeight="169.0" prefWidth="541.0" BorderPane.alignment="CENTER">
@@ -91,68 +214,6 @@
                         </AnchorPane>
                      </center>
                   </BorderPane>
-                  <BorderPane fx:id="paneReportes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
-                     <top>
-                        <Pane prefHeight="134.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Reportes">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras crear reportes" textFill="#989aad" wrapText="true" />
-                              <Label layoutX="48.0" layoutY="85.0" prefHeight="24.0" prefWidth="34.0" text="Hoy">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="352.0" layoutX="149.0" layoutY="123.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrarReportes" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnCerrarReportesAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
-                           </children>
-                        </Pane>
-                     </top>
-                     <center>
-                        <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <GridPane layoutX="42.0" layoutY="9.0" prefHeight="412.0" prefWidth="499.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="349.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <TableView fx:id="reportesTable" prefHeight="360.0" prefWidth="499.0" GridPane.rowIndex="1">
-                                       <columns>
-                                          <TableColumn fx:id="idReporteCol" prefWidth="52.0" text="ID" />
-                                          <TableColumn fx:id="idUsuarioCol" prefWidth="53.0" text="Usuario" />
-                                          <TableColumn fx:id="contaminanteCol" prefWidth="61.0" text="Contaminante" />
-                                          <TableColumn fx:id="LocalidadCol" prefWidth="84.0" text="Localidad" />
-                                          <TableColumn fx:id="UnidadComunCol" prefWidth="87.0" text="Unidad Comunera" />
-                                          <TableColumn fx:id="BarrioCol" prefWidth="60.0" text="Barrio" />
-                                          <TableColumn fx:id="DescripcionCol" prefWidth="101.0" text="Descripcion" />
-                                       </columns>
-                                       <GridPane.margin>
-                                          <Insets top="10.0" />
-                                       </GridPane.margin>
-                                    </TableView>
-                                    <HBox prefHeight="100.0" prefWidth="200.0">
-                                       <children>
-                                          <Button fx:id="CrearReporteBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearReporteBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-                                          <Button fx:id="ActualizarBtnReportes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActualizarTablaReportes" prefHeight="57.0" prefWidth="121.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar Tabla de Reportes" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </GridPane>
-                           </children>
-                        </AnchorPane>
-                     </center>
-                  </BorderPane>
                </children>
             </StackPane>
          </center>
@@ -190,9 +251,9 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnUsuarios" mnemonicParsing="false" onAction="#btnUsuariosAction" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Usuarios" textFill="WHITE" />
-                        <Button fx:id="btnInformes" mnemonicParsing="false" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Informes" textFill="WHITE" GridPane.columnIndex="2" />
+                        <Button fx:id="btnInformes" mnemonicParsing="false" onAction="#btnInformesOnAction" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Informes" textFill="WHITE" GridPane.columnIndex="2" />
                         <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#btnReportesOnAction" prefHeight="111.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1" />
+                        <Button fx:id="btnUsuarios" mnemonicParsing="false" onAction="#btnUsuariosAction" prefHeight="110.0" prefWidth="87.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Usuarios" textFill="WHITE" />
                      </children>
                   </GridPane>
                   <Label layoutX="96.0" layoutY="588.0" prefHeight="27.0" prefWidth="193.0" text="Developed with JavaFX &amp; MySQL" textAlignment="CENTER" textFill="WHITE" wrapText="true">
