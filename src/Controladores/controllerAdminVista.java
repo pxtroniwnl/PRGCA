@@ -14,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import ConexionBaseDeDatos.ConexionBDD;
+import Modelos.Informes;
 import Modelos.Reporte;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -81,9 +82,6 @@ public class controllerAdminVista implements Initializable {
     private Button btnCerrarUsuarios;
 
     @FXML
-    private Button btnInformes;
-
-    @FXML
     private Button btnReportes;
 
     @FXML
@@ -133,6 +131,49 @@ public class controllerAdminVista implements Initializable {
     private TableColumn<Reporte, String> DescripcionCol;
 
     ObservableList<Reporte> ListaReportes = FXCollections.observableArrayList();
+    
+    //NODOS DE LA SUB-INTERFAZ DE INFORMES
+    @FXML
+    private BorderPane paneInformes;
+    
+    @FXML
+    private Button btnInformes;
+    
+    @FXML
+    private Button CrearInformeBtn;
+    
+    @FXML
+    private Button EditarBtnInforme;
+    
+    @FXML
+    private Button EliminarBtnInforme;
+    
+    @FXML
+    private Button btnCerrarInforme;
+    
+    @FXML
+    private TableView<Informes> InformesTable;
+    
+    @FXML
+    private TableColumn<Integer, ?> IdInformeCol;
+    
+    @FXML
+    private TableColumn<String, ?> ContamInformeCol;
+    
+    @FXML
+    private TableColumn<String, ?> LocalidadInformeCol;
+    
+    @FXML
+    private TableColumn<String, ?> UnidadComunInformeCol;
+    
+    @FXML
+    private TableColumn<String, ?> BarrioInformeCol;
+    
+    @FXML
+    private TableColumn<String, ?> ValoracionInformeCol;
+    
+    @FXML
+    private TableColumn<String, ?> EstadoInformeCol;
     
     
     //METODO PARA CREAR REPORTES ADMIN
@@ -202,6 +243,13 @@ public class controllerAdminVista implements Initializable {
         }
     }
     
+    //METODO PARA CERRAR VENTANA INFORMES
+    @FXML
+    private void btnCerrarInformesOnAction(ActionEvent e){
+        Stage stage = (Stage) btnCerrarInforme.getScene().getWindow();
+        stage.close();
+    }
+    
     //METODO PARA CERRAR VENTANA REPORTES
     @FXML
     private void btnCerrarReportesAction(ActionEvent evt){
@@ -235,6 +283,12 @@ public class controllerAdminVista implements Initializable {
     @FXML
     private void btnReportesOnAction(ActionEvent evt) {
         paneReportes.toFront();
+    }
+    
+    //METODO PARA QUE PASE ADELANTE EL APARTADO DE INFORMES
+    @FXML
+    private void btnInformesOnAction(ActionEvent e){
+        paneInformes.toFront();
     }
 
     //METODO PARA CERRAR VENTANA USUARIO
