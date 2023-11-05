@@ -111,12 +111,12 @@ public class controllerAñadirUsuario implements Initializable{
         //CONDICIONAL PARA SABER SI SE ENCONTRO EL USUARIO O NO (DEPENDIENDO DE LAS FILAS)
         if (rQ > 0) {
             // Si se encontró un usuario, la consulta devolverá al menos una fila
-            JOptionPane.showConfirmDialog(null, "¡Usuario registrado!");
+            JOptionPane.showMessageDialog(null, "¡Usuario registrado!");
             Stage stage = (Stage) registrarBttn.getScene().getWindow();
             stage.close();
         } else {
             // Si no se encontró un usuario, la consulta no devolverá filas
-            JOptionPane.showConfirmDialog(null, "Usuario no registrado. Verifica tus credenciales.");
+            JOptionPane.showMessageDialog(null, "Usuario no registrado. Verifica tus credenciales.");
         }
     }
     
