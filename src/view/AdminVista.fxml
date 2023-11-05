@@ -25,6 +25,72 @@
          <center>
             <StackPane prefHeight="629.0" prefWidth="576.0" BorderPane.alignment="CENTER">
                <children>
+                  <BorderPane fx:id="paneUsuarios" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="169.0" prefWidth="541.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Usuarios">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras crear usuarios y eliminarlos" textFill="#989aad" wrapText="true" />
+                              <Label layoutX="47.0" layoutY="123.0" prefHeight="24.0" prefWidth="34.0" text="Hoy">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="352.0" layoutX="148.0" layoutY="155.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrarUsuarios" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnCerrarUsuariosAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="42.0" layoutY="9.0" prefHeight="412.0" prefWidth="499.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="349.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="UsuariosTable" prefHeight="341.0" prefWidth="515.0" GridPane.rowIndex="1">
+                                      <columns>
+                                        <TableColumn fx:id="idUsuario" text="ID" />
+                                        <TableColumn fx:id="NombreUsuario" prefWidth="103.0" text="Nombre" />
+                                          <TableColumn fx:id="UsernameUsuario" prefWidth="72.0" text="Username" />
+                                          <TableColumn fx:id="PasswordUsuario" prefWidth="81.0" text="Password" />
+                                          <TableColumn fx:id="CorreoUsuario" prefWidth="61.0" text="Correo" />
+                                          <TableColumn fx:id="id_rolUsuario" prefWidth="57.0" text="id_rol" />
+                                      </columns>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="CrearUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearUsuarioBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Usuario" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                                          <Button fx:id="ActualizarBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActualizarTabla" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar Tabla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="BorrarUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BorrarUsuario" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Borrar Usuarios" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
                   <BorderPane fx:id="paneReportes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
                      <top>
                         <Pane prefHeight="134.0" prefWidth="582.0" BorderPane.alignment="CENTER">
@@ -138,72 +204,6 @@
                                           <Button fx:id="EliminarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Eliminar Informe" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </GridPane>
-                           </children>
-                        </AnchorPane>
-                     </center>
-                  </BorderPane>
-                  <BorderPane fx:id="paneUsuarios" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
-                     <top>
-                        <Pane prefHeight="169.0" prefWidth="541.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Usuarios">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras crear usuarios y eliminarlos" textFill="#989aad" wrapText="true" />
-                              <Label layoutX="47.0" layoutY="123.0" prefHeight="24.0" prefWidth="34.0" text="Hoy">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="352.0" layoutX="148.0" layoutY="155.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrarUsuarios" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnCerrarUsuariosAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
-                           </children>
-                        </Pane>
-                     </top>
-                     <center>
-                        <AnchorPane prefHeight="452.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <GridPane layoutX="42.0" layoutY="9.0" prefHeight="412.0" prefWidth="499.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="375.0" minHeight="10.0" prefHeight="349.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <TableView fx:id="UsuariosTable" prefHeight="341.0" prefWidth="515.0" GridPane.rowIndex="1">
-                                      <columns>
-                                        <TableColumn fx:id="idUsuario" text="ID" />
-                                        <TableColumn fx:id="NombreUsuario" prefWidth="103.0" text="Nombre" />
-                                          <TableColumn fx:id="UsernameUsuario" prefWidth="72.0" text="Username" />
-                                          <TableColumn fx:id="PasswordUsuario" prefWidth="81.0" text="Password" />
-                                          <TableColumn fx:id="CorreoUsuario" prefWidth="61.0" text="Correo" />
-                                          <TableColumn fx:id="id_rolUsuario" prefWidth="57.0" text="id_rol" />
-                                      </columns>
-                                       <GridPane.margin>
-                                          <Insets top="10.0" />
-                                       </GridPane.margin>
-                                    </TableView>
-                                    <HBox prefHeight="100.0" prefWidth="200.0">
-                                       <children>
-                                          <Button fx:id="CrearUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearUsuarioBtnOnAction" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Usuario" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-                                          <Button fx:id="ActualizarBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ActualizarTabla" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Actualizar Tabla" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                          <Button fx:id="BorrarUsuarioBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BorrarUsuario" prefHeight="57.0" prefWidth="95.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Borrar Usuarios" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
                                              </HBox.margin>
                                           </Button>
                                        </children>
