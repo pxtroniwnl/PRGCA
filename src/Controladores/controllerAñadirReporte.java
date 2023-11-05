@@ -159,6 +159,9 @@ public class controllerAñadirReporte implements Initializable {
     private void localidadComboBoxOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         Localidad selectedLocalidad = LocalidadComboBox.getValue();
         if (selectedLocalidad != null) {
+            // Borra los elementos actuales en UnidadComuneraComboBox y BarrioComboBox
+            UnidadComuneraComboBox.getItems().clear();
+            BarrioComboBox.getItems().clear();
             cargarUnidadesComuneras(selectedLocalidad.getNumeroLocalidad());
         }
     }
@@ -168,6 +171,7 @@ public class controllerAñadirReporte implements Initializable {
         // Carga los Barrios correspondientes a la Unidad Comunera seleccionada.
         UnidadComunera selectedUnidadComunera = UnidadComuneraComboBox.getValue();
         if (selectedUnidadComunera != null) {
+            BarrioComboBox.getItems().clear();
             cargarBarrios(selectedUnidadComunera.getIdUnidad());
         }
     }
