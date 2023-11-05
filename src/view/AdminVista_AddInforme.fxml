@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.controllerAñadirInforme">
+    <center>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="161.0" fitWidth="232.0" layoutX="96.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/PRGCA%20COLOR%20VERDE.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="20.0" layoutY="385.0" prefHeight="44.0" prefWidth="88.0" text="Valoracion" wrapText="true">
+                    <font>
+                        <Font size="12.5" />
+                    </font>
+                </Label>
+                <Circle fill="#ffffff00" layoutX="42.0" layoutY="544.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Circle fill="#ffffff00" layoutX="364.0" layoutY="546.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Line endX="100.0" fill="#588100" layoutX="216.0" layoutY="563.0" startX="-126.0" stroke="#588100" />
+                <Label layoutX="113.0" layoutY="537.0" prefHeight="17.0" prefWidth="180.0" text="Developed with JavaFX &amp; MySQL" textFill="#588100" />
+                <Button fx:id="registrarBttn" layoutX="49.0" layoutY="451.0" mnemonicParsing="false" onAction="#crearInformeOnAction" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #588100;" text="Añadir" textFill="WHITE" />
+                <Button fx:id="atrasBttn" layoutX="230.0" layoutY="451.0" mnemonicParsing="false" onAction="#atrasBtnOnAction" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #588100;" text="Atras" textFill="WHITE" />
+            <Label layoutX="16.0" layoutY="176.0" prefHeight="44.0" prefWidth="88.0" text="Contaminante" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="ContaminanteComboBox" layoutX="128.0" layoutY="185.0" prefHeight="25.0" prefWidth="244.0" promptText="Eliga Tipo de Contaminante:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="16.0" layoutY="227.0" prefHeight="44.0" prefWidth="88.0" text="Localidad" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="LocalidadComboBox" layoutX="129.0" layoutY="237.0" onAction="#localidadComboBoxOnAction" prefHeight="25.0" prefWidth="243.0" promptText="Eliga localidad:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="16.0" layoutY="286.0" prefHeight="44.0" prefWidth="88.0" text="Unidad Comunera" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="UnidadComuneraComboBox" layoutX="128.0" layoutY="295.0" onAction="#unidadComuneraComboBoxOnAction" prefHeight="25.0" prefWidth="243.0" promptText="Eliga Unidad Comunera:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="20.0" layoutY="338.0" prefHeight="44.0" prefWidth="88.0" text="Barrio" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="BarrioComboBox" layoutX="128.0" layoutY="347.0" prefHeight="25.0" prefWidth="243.0" promptText="Eliga barrio:" style="-fx-background-radius: 2em;" />
+            <ComboBox fx:id="ValoracionComboBox" layoutX="128.0" layoutY="394.0" prefHeight="25.0" prefWidth="243.0" promptText="Eliga valoracion critica:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="144.0" layoutY="124.0" prefHeight="44.0" prefWidth="118.0" text="Informes Ambientales" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Verdana Bold" size="16.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <right>
+        <AnchorPane prefHeight="559.0" prefWidth="50.0" style="-fx-background-color: #588100;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#ffffff00" layoutX="25.0" layoutY="32.0" radius="18.0" stroke="#d7d7d7" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+            </children>
+        </AnchorPane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="559.0" prefWidth="50.0" style="-fx-background-color: #588100;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#ffffff00" layoutX="25.0" layoutY="32.0" radius="18.0" stroke="#d7d7d7" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>
