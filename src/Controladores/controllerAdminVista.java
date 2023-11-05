@@ -152,6 +152,9 @@ public class controllerAdminVista implements Initializable {
     private Button btnCerrarInforme;
     
     @FXML
+    private Button ActualizarInformesBtn;
+    
+    @FXML
     private TableView<Informes> InformesTable;
     
     @FXML
@@ -175,6 +178,35 @@ public class controllerAdminVista implements Initializable {
     @FXML
     private TableColumn<String, ?> EstadoInformeCol;
     
+    ObservableList<Informes> ListaInformes = FXCollections.observableArrayList();
+    
+    //MEOTOD PARA CREAR INFORMES ADMIN
+    @FXML
+    private void CrearInformeOnAction(ActionEvent e) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_AddInforme.fxml"));
+        
+        Scene scene = new Scene(root);
+        
+        Stage popupAñadirInforme = new Stage();
+        
+        popupAñadirInforme.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        popupAñadirInforme.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+        
+        // Listener para permitir mover la ventana desde el borde superior
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        root.setOnMouseDragged(event -> {
+            popupAñadirInforme.setX(event.getScreenX() - xOffset);
+            popupAñadirInforme.setY(event.getScreenY() - yOffset);
+        });
+
+        popupAñadirInforme.setScene(scene);
+        popupAñadirInforme.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
+        popupAñadirInforme.show();
+    }
     
     //METODO PARA CREAR REPORTES ADMIN
     @FXML
@@ -202,6 +234,44 @@ public class controllerAdminVista implements Initializable {
         popupAñadirReporte.setScene(scene);
         popupAñadirReporte.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
         popupAñadirReporte.show();
+    }
+    
+    //METODO PARA CARGAR LOS DATOS AL TABLEVIEW POR CADA COLUMNA INFORMES
+    private void cargarDatosInformes() throws ClassNotFoundException, SQLException {
+        ConexionBDD miConexion1 = new ConexionBDD();
+        conexion = miConexion1.getConnection();
+        ActionEvent evt = null;
+        ActualizarTablaInformes(evt);
+
+        IdInformeCol.setCellValueFactory(new PropertyValueFactory<>("idInforme"));
+        ContamInformeCol.setCellValueFactory(new PropertyValueFactory<>("contaminante"));
+        LocalidadInformeCol.setCellValueFactory(new PropertyValueFactory<>("localidad"));
+        UnidadComunInformeCol.setCellValueFactory(new PropertyValueFactory<>("unidad"));
+        BarrioInformeCol.setCellValueFactory(new PropertyValueFactory<>("barrio"));
+        ValoracionInformeCol.setCellValueFactory(new PropertyValueFactory<>("valoracion"));
+        EstadoInformeCol.setCellValueFactory(new PropertyValueFactory<>("estado"));
+    }
+    
+    //METODO PARA ACTUALIZAR LOS DATOS DEL TABLEVIEW POR CADA COLUMNA REPORTES
+    @FXML
+    private void ActualizarTablaInformes(ActionEvent evt) throws SQLException {
+        ListaInformes.clear();
+
+        query = "SELECT * FROM informes";
+        declaracionPreparada = conexion.prepareStatement(query);
+        resultadoQuery = declaracionPreparada.executeQuery();
+
+        while (resultadoQuery.next()) {
+            ListaInformes.add(new Informes(resultadoQuery.getInt("idInforme"),
+                    resultadoQuery.getString("contaminante"),
+                    resultadoQuery.getString("localidad"),
+                    resultadoQuery.getString("unidad"),
+                    resultadoQuery.getString("barrio"),
+                    resultadoQuery.getString("valoracion"),
+                    resultadoQuery.getString("estado")));
+
+            InformesTable.setItems(ListaInformes);
+        }
     }
     
     //METODO PARA CARGAR LOS DATOS AL TABLEVIEW POR CADA COLUMNA REPORTES
@@ -389,6 +459,12 @@ public class controllerAdminVista implements Initializable {
 
             cargarDatosReportes();
 
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(controllerAdminVista.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            cargarDatosInformes();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(controllerAdminVista.class.getName()).log(Level.SEVERE, null, ex);
         }

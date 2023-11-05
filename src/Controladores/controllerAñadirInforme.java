@@ -7,45 +7,38 @@ package Controladores;
 import ConexionBaseDeDatos.ConexionBDD;
 import Modelos.Barrio;
 import Modelos.Contaminante;
+import Modelos.Estado;
 import Modelos.Localidad;
 import Modelos.UnidadComunera;
+import Modelos.Valoracion;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author ALEJANDRO PATRON
  */
-public class controllerAñadirReporte implements Initializable {
-
-    //AQUI SE TRABAJA CON COMBOBOX ANIDADOS ASI QUE ES DISTINTA LA FORMA DE AÑADIR INMFORMACION
-    //DECLARAMOS LOS NODOS
+public class controllerAñadirInforme implements Initializable{
+    //DECLARAMOS LOS NODOS DE LA INTERFAZ
     @FXML
     private ComboBox<Barrio> BarrioComboBox;
 
     @FXML
     private ComboBox<Contaminante> ContaminanteComboBox;
-
-    @FXML
-    private TextField DescripcionTextField;
-
-    @FXML
-    private TextField IDUsuarioTextField;
 
     @FXML
     private ComboBox<Localidad> LocalidadComboBox;
@@ -54,36 +47,37 @@ public class controllerAñadirReporte implements Initializable {
     private ComboBox<UnidadComunera> UnidadComuneraComboBox;
 
     @FXML
+    private ComboBox<Valoracion> ValoracionComboBox;
+
+    @FXML
     private Button atrasBttn;
 
     @FXML
     private Button registrarBttn;
-
-    //METODO PARA VOLVER ATRAS
+    
+    //METODO PARA CERRAR VENTANA Y VOLVER
     @FXML
-    private void atrasBtnOnAction(ActionEvent e) {
+    private void atrasBtnOnAction(ActionEvent e){
         Stage stage = (Stage) atrasBttn.getScene().getWindow();
         stage.close();
     }
-
-    //METODO PARA VERIFICAR SI DEJO ESPACIOS SIN COMPLETAR
+    
+    //METODO PARA VERIFICAR SI DEJA ESPACIOS SIN COMPLETAR
     @FXML
-    private void crearReporteOnAction(ActionEvent e) throws ClassNotFoundException, SQLException {
-        if (IDUsuarioTextField.getText().isBlank() && DescripcionTextField.getText().isBlank()) {
-            System.out.println("Por favor, complete todos los campos.");
-        } else {
-            Contaminante selectedContam = ContaminanteComboBox.getValue();
-            Localidad selectedLocalidad = LocalidadComboBox.getValue();
-            UnidadComunera selectedUnidad = UnidadComuneraComboBox.getValue();
-            Barrio selectedBarrio = BarrioComboBox.getValue();
-            
-            if(selectedContam == null || selectedLocalidad == null || selectedUnidad == null || selectedBarrio == null){
+    private void crearInformeOnAction(ActionEvent e) throws ClassNotFoundException, SQLException{
+        Contaminante selectedContam = (Contaminante) ContaminanteComboBox.getValue();
+        Localidad selectedLocalidad = (Localidad) LocalidadComboBox.getValue();
+        UnidadComunera selectedUnidad = (UnidadComunera) UnidadComuneraComboBox.getValue();
+        Barrio selectedBarrio = (Barrio) BarrioComboBox.getValue();
+        Valoracion selectedVal = (Valoracion) ValoracionComboBox.getValue();
+        
+        
+            if(selectedContam == null || selectedLocalidad == null || selectedUnidad == null || selectedBarrio == null || selectedVal == null){
                 JOptionPane.showMessageDialog(null, "Eliga un campo");
             }else{
-                //METODO PARA AÑADIR REPORTES
-                añadirReporte();
+                //METODO PARA AÑADIR INFORMES
+                añadirInformes();
             }
-        }
     }
     
     //METODO PARA CARGAR LOS CONTAMINANTES
@@ -108,7 +102,18 @@ public class controllerAñadirReporte implements Initializable {
 
         LocalidadComboBox.getItems().addAll(loc1, loc2, loc3);
     }
-
+    
+    //METODO PARA CARGAR VALORACION
+    private void cargarValoracion(){
+        Valoracion v1 = new Valoracion(1, "BAJA");
+        Valoracion v2 = new Valoracion(2, "MEDIA");
+        Valoracion v3 = new Valoracion(3, "ALTA");
+        Valoracion v4 = new Valoracion(4, "CRITICA");
+        
+        
+        ValoracionComboBox.getItems().addAll(v1,v2,v3,v4);
+    }
+    
     //METODO PARA CARGAR UNIDADES COMUNERAS
     private void cargarUnidadesComuneras(int localidadID) throws ClassNotFoundException, SQLException {
         ConexionBDD conexionActual = new ConexionBDD(); //Creamos una nueva conexion de la clase ConexionBDD (Objeto de esta clase con el constructor por defecto)
@@ -131,7 +136,7 @@ public class controllerAñadirReporte implements Initializable {
         }
         UnidadComuneraComboBox.getItems().addAll(unidadesList);
     }
-
+    
     //METODO PARA CARGAR BARRIOS
     private void cargarBarrios(int unidadComuneraID) throws SQLException, ClassNotFoundException {
         ConexionBDD conexionActual = new ConexionBDD(); //Creamos una nueva conexion de la clase ConexionBDD (Objeto de esta clase con el constructor por defecto)
@@ -154,7 +159,8 @@ public class controllerAñadirReporte implements Initializable {
 
         BarrioComboBox.setItems(barriosList);
     }
-
+    
+    //METODO PARA LOS COMBOBOX ANIDADOS DE LOCALIDAD-UNIDAD
     @FXML
     private void localidadComboBoxOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         Localidad selectedLocalidad = LocalidadComboBox.getValue();
@@ -165,7 +171,8 @@ public class controllerAñadirReporte implements Initializable {
             cargarUnidadesComuneras(selectedLocalidad.getNumeroLocalidad());
         }
     }
-
+    
+    //METODO PARA LOS COMBOBOX ANIDADOS DE UNIDAD-BARRIOS
     @FXML
     private void unidadComuneraComboBoxOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         // Carga los Barrios correspondientes a la Unidad Comunera seleccionada.
@@ -176,8 +183,8 @@ public class controllerAñadirReporte implements Initializable {
         }
     }
     
-    //METODO DEL INSERT A LA BASE DE DATOS
-    private void añadirReporte() throws ClassNotFoundException, SQLException{
+    //METODO DEL INSERT A LA BASE DE DATOS DE LOS INFORMES
+    private void añadirInformes() throws ClassNotFoundException, SQLException{
         ConexionBDD conexionActual = new ConexionBDD(); //Creamos una nueva conexion de la clase ConexionBDD (Objeto de esta clase con el constructor por defecto)
         Connection conectarBDD = (Connection) conexionActual.getConnection(); //Conectamos e inicializamos la BDD haciendo uso de un casteo
         
@@ -185,11 +192,17 @@ public class controllerAñadirReporte implements Initializable {
         String selectedLocalidad = LocalidadComboBox.getValue().getNombreLocalidad(); //Obtiene la localidad elegida
         String selectedUnidad = UnidadComuneraComboBox.getValue().getNombreUnidad(); //Obtiene la unidad elegida
         String selectedBarrio = BarrioComboBox.getValue().getNombreBarrio(); //Obtiene el barrio elegio
+        String selectedValoracion = ValoracionComboBox.getValue().getNombreValoracion(); //Obtiene la valoracion elegida
+        
+        //Ponemos por Default que el estado de todo informe recien creado sea NO ATENDIDO
+        Estado e = new Estado(1, "NO ATENDIDO");
+        String estadoPorDeafult = e.getNombreEstado();
+                
         
         // Definimos la 'consulta' o 'query' para registrar nuevos registros en los respectivos campos de valor
-        String consultaQuery = "INSERT INTO reportes (idUsuario, contaminante, localidad, unidad, barrio, Descripcion) "
-            + "VALUES ('" + IDUsuarioTextField.getText() + "','" + selectedContam + "','" + selectedLocalidad 
-            + "','" + selectedUnidad + "','" + selectedBarrio + "','" + DescripcionTextField.getText() + "')";
+        String consultaQuery = "INSERT INTO informes (contaminante, localidad, unidad, barrio, valoracion, estado) "
+            + "VALUES ('" + selectedContam + "', '" + selectedLocalidad + "', '" + selectedUnidad 
+            + "', '" + selectedBarrio + "', '" + selectedValoracion + "', '" + estadoPorDeafult + "')";
         
         //Instanciamos de tipo statement para la consola
         Statement instancia = (Statement) conectarBDD.createStatement();
@@ -199,24 +212,20 @@ public class controllerAñadirReporte implements Initializable {
         //CONDICIONAL PARA SABER SI SE ENCONTRO EL USUARIO O NO (DEPENDIENDO DE LAS FILAS)
         if (rQ > 0) {
             // Si se encontró un usuario, la consulta devolverá al menos una fila
-            JOptionPane.showMessageDialog(null, "¡Reporte Registrado!");
+            JOptionPane.showMessageDialog(null, "¡Informe Registrado!");
             Stage stage = (Stage) registrarBttn.getScene().getWindow();
             stage.close();
         } else {
             // Si no se encontró un usuario, la consulta no devolverá filas
-            JOptionPane.showMessageDialog(null, "Reporte no registrado. Verifica tus credenciales.");
-        }   
+            JOptionPane.showMessageDialog(null, "Informe no registrado. Verifica tus credenciales.");
+        } 
     }
-
-    /**
-     *
-     * @param location
-     * @param resources
-     */
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cargarLocalidades();
         cargarContaminante();
+        cargarLocalidades();
+        cargarValoracion();
     }
     
 }
