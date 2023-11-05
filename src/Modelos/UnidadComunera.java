@@ -52,7 +52,7 @@ public class UnidadComunera {
 
     @Override
     public String toString() {
-        return "UnidadComunera{" + "idUnidad=" + idUnidad + ", nombreUnidad=" + nombreUnidad + ", localidad_id=" + localidad_id + '}';
+        return nombreUnidad; //Esto se mostrara en el ComboBox
     }
     
     

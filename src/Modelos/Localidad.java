@@ -35,7 +35,7 @@ public class Localidad {
 
     @Override
     public String toString() {
-        return "Localidad{" + "numeroLocalidad=" + numeroLocalidad + ", nombreLocalidad=" + nombreLocalidad + '}';
+        return nombreLocalidad; //Esto se mostrara en el ComboBox
     }
     
     

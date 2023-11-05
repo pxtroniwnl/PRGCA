@@ -35,7 +35,7 @@ public class Contaminante {
 
     @Override
     public String toString() {
-        return "Contaminante{" + "idContaminante=" + idContaminante + ", nombreContam=" + nombreContam + '}';
+        return nombreContam; //Esto se mostrara en el ComboBox
     }
     
     
