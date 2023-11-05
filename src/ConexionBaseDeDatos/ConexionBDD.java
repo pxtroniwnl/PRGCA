@@ -13,7 +13,7 @@ public class ConexionBDD {
     public Connection getConnection() throws ClassNotFoundException, SQLException{
         //Declaramos los parametros para el DriverManager y GetConnection
         String usuarioBDD="root";
-        String passwBDD="prgca_user";
+        String passwBDD="Prgca_user";
         String urlBDD = "jdbc:mysql://localhost:3306/prgca";
         
         Class.forName("com.mysql.cj.jdbc.Driver");
