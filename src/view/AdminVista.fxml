@@ -196,12 +196,12 @@
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
                                           <Button fx:id="CrearInformeBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#CrearInformeOnAction" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Añadir  Informes" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-                                          <Button fx:id="EditarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0" prefWidth="92.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar Informes" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                          <Button fx:id="EditarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#EditarInformeOnAction" prefHeight="49.0" prefWidth="92.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Editar Informes" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </Button>
-                                          <Button fx:id="EliminarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Eliminar Informe" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                          <Button fx:id="EliminarBtnInforme" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ElminarInformeOnAction" prefHeight="51.0" prefWidth="101.0" style="-fx-background-color: #255000; -fx-background-radius: 2em;" text="Eliminar Informe" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
