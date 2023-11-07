@@ -131,67 +131,67 @@ public class controllerAdminVista implements Initializable {
     private TableColumn<Reporte, String> DescripcionCol;
 
     ObservableList<Reporte> ListaReportes = FXCollections.observableArrayList();
-    
+
     //NODOS DE LA SUB-INTERFAZ DE INFORMES
     @FXML
     private BorderPane paneInformes;
-    
+
     @FXML
     private Button btnInformes;
-    
+
     @FXML
     private Button CrearInformeBtn;
-    
+
     @FXML
     private Button EditarBtnInforme;
-    
+
     @FXML
     private Button EliminarBtnInforme;
-    
+
     @FXML
     private Button btnCerrarInforme;
-    
+
     @FXML
     private Button ActualizarInformesBtn;
-    
+
     @FXML
     private TableView<Informes> InformesTable;
-    
+
     @FXML
     private TableColumn<Integer, ?> IdInformeCol;
-    
+
     @FXML
     private TableColumn<String, ?> ContamInformeCol;
-    
+
     @FXML
     private TableColumn<String, ?> LocalidadInformeCol;
-    
+
     @FXML
     private TableColumn<String, ?> UnidadComunInformeCol;
-    
+
     @FXML
     private TableColumn<String, ?> BarrioInformeCol;
-    
+
     @FXML
     private TableColumn<String, ?> ValoracionInformeCol;
-    
+
     @FXML
     private TableColumn<String, ?> EstadoInformeCol;
-    
+
     ObservableList<Informes> ListaInformes = FXCollections.observableArrayList();
-    
+
     //MEOTOD PARA CREAR INFORMES ADMIN
     @FXML
-    private void CrearInformeOnAction(ActionEvent e) throws IOException{
+    private void CrearInformeOnAction(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_AddInforme.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         Stage popupAñadirInforme = new Stage();
-        
+
         popupAñadirInforme.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
         popupAñadirInforme.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
-        
+
         // Listener para permitir mover la ventana desde el borde superior
         root.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
@@ -207,18 +207,18 @@ public class controllerAdminVista implements Initializable {
         popupAñadirInforme.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
         popupAñadirInforme.show();
     }
-    
-    //METODO PARA CREAR REPORTES ADMIN
+
+    //METODO PARA EDITAR INFORMES
     @FXML
-    private void CrearReporteBtnOnAction(ActionEvent e) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_AddReporte.fxml"));
-        
+    private void EditarInformeOnAction(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_EditarInforme.fxml"));
+
         Scene scene = new Scene(root);
-        
-        Stage popupAñadirReporte = new Stage();
-        
-        popupAñadirReporte.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
-        popupAñadirReporte.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+
+        Stage popupEditar = new Stage();
+
+        popupEditar.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        popupEditar.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
 
         // Listener para permitir mover la ventana desde el borde superior
         root.setOnMousePressed(event -> {
@@ -227,15 +227,71 @@ public class controllerAdminVista implements Initializable {
         });
 
         root.setOnMouseDragged(event -> {
-            popupAñadirReporte.setX(event.getScreenX() - xOffset);
-            popupAñadirReporte.setY(event.getScreenY() - yOffset);
+            popupEditar.setX(event.getScreenX() - xOffset);
+            popupEditar.setY(event.getScreenY() - yOffset);
         });
 
-        popupAñadirReporte.setScene(scene);
-        popupAñadirReporte.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
-        popupAñadirReporte.show();
+        popupEditar.setScene(scene);
+        popupEditar.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
+        popupEditar.show();
     }
-    
+
+    //METODO PARA ELIMINAR INFORMES
+    @FXML
+    private void ElminarInformeOnAction(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_EliminarInforme.fxml"));
+
+        Scene scene = new Scene(root);
+
+        Stage popupAñadirInforme = new Stage();
+
+        popupAñadirInforme.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        popupAñadirInforme.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+
+        // Listener para permitir mover la ventana desde el borde superior
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        root.setOnMouseDragged(event -> {
+            popupAñadirInforme.setX(event.getScreenX() - xOffset);
+            popupAñadirInforme.setY(event.getScreenY() - yOffset);
+        });
+
+        popupAñadirInforme.setScene(scene);
+        popupAñadirInforme.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
+        popupAñadirInforme.show();
+    }
+
+    //METODO PARA CREAR REPORTES ADMIN
+    @FXML
+    private void CrearReporteBtnOnAction(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_EliminarInforme.fxml"));
+
+        Scene scene = new Scene(root);
+
+        Stage popupEliminarInforme = new Stage();
+
+        popupEliminarInforme.initStyle(StageStyle.UNDECORATED); //PARA QUE APAREZCA SIN LA BARRA DE MINIMIZAR, CERRAR ETC...
+        popupEliminarInforme.setResizable(false); //PARA QUE NO SE PUEDA CAMBIAR EL TAMAÑO DE LA INTERFAZ
+
+        // Listener para permitir mover la ventana desde el borde superior
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        root.setOnMouseDragged(event -> {
+            popupEliminarInforme.setX(event.getScreenX() - xOffset);
+            popupEliminarInforme.setY(event.getScreenY() - yOffset);
+        });
+
+        popupEliminarInforme.setScene(scene);
+        popupEliminarInforme.getIcons().add(new Image("/images/PRGCA COLOR VERDE.png"));
+        popupEliminarInforme.show();
+    }
+
     //METODO PARA CARGAR LOS DATOS AL TABLEVIEW POR CADA COLUMNA INFORMES
     private void cargarDatosInformes() throws ClassNotFoundException, SQLException {
         ConexionBDD miConexion1 = new ConexionBDD();
@@ -251,7 +307,7 @@ public class controllerAdminVista implements Initializable {
         ValoracionInformeCol.setCellValueFactory(new PropertyValueFactory<>("valoracion"));
         EstadoInformeCol.setCellValueFactory(new PropertyValueFactory<>("estado"));
     }
-    
+
     //METODO PARA ACTUALIZAR LOS DATOS DEL TABLEVIEW POR CADA COLUMNA REPORTES
     @FXML
     private void ActualizarTablaInformes(ActionEvent evt) throws SQLException {
@@ -273,7 +329,7 @@ public class controllerAdminVista implements Initializable {
             InformesTable.setItems(ListaInformes);
         }
     }
-    
+
     //METODO PARA CARGAR LOS DATOS AL TABLEVIEW POR CADA COLUMNA REPORTES
     private void cargarDatosReportes() throws ClassNotFoundException, SQLException {
         ConexionBDD miConexion1 = new ConexionBDD();
@@ -288,7 +344,7 @@ public class controllerAdminVista implements Initializable {
         UnidadComunCol.setCellValueFactory(new PropertyValueFactory<>("unidad"));
         BarrioCol.setCellValueFactory(new PropertyValueFactory<>("barrio"));
         DescripcionCol.setCellValueFactory(new PropertyValueFactory<>("Descripcion"));
-        
+
     }
 
     //METODO PARA ACTUALIZAR LOS DATOS DEL TABLEVIEW POR CADA COLUMNA REPORTES
@@ -312,17 +368,17 @@ public class controllerAdminVista implements Initializable {
             reportesTable.setItems(ListaReportes);
         }
     }
-    
+
     //METODO PARA CERRAR VENTANA INFORMES
     @FXML
-    private void btnCerrarInformesOnAction(ActionEvent e){
+    private void btnCerrarInformesOnAction(ActionEvent e) {
         Stage stage = (Stage) btnCerrarInforme.getScene().getWindow();
         stage.close();
     }
-    
+
     //METODO PARA CERRAR VENTANA REPORTES
     @FXML
-    private void btnCerrarReportesAction(ActionEvent evt){
+    private void btnCerrarReportesAction(ActionEvent evt) {
         Stage stage = (Stage) btnCerrarReportes.getScene().getWindow();
         stage.close();
     }
@@ -354,10 +410,10 @@ public class controllerAdminVista implements Initializable {
     private void btnReportesOnAction(ActionEvent evt) {
         paneReportes.toFront();
     }
-    
+
     //METODO PARA QUE PASE ADELANTE EL APARTADO DE INFORMES
     @FXML
-    private void btnInformesOnAction(ActionEvent e){
+    private void btnInformesOnAction(ActionEvent e) {
         paneInformes.toFront();
     }
 
@@ -462,7 +518,7 @@ public class controllerAdminVista implements Initializable {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(controllerAdminVista.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         try {
             cargarDatosInformes();
         } catch (ClassNotFoundException | SQLException ex) {
