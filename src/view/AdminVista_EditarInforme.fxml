@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.controllerEditarInforme">
+    <center>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="20.0" layoutY="360.0" prefHeight="44.0" prefWidth="88.0" text="Valoracion" wrapText="true">
+                    <font>
+                        <Font size="12.5" />
+                    </font>
+                </Label>
+                <Circle fill="#ffffff00" layoutX="38.0" layoutY="503.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Circle fill="#ffffff00" layoutX="632.0" layoutY="504.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+                <Line endX="255.0" fill="#588100" layoutX="333.0" layoutY="504.0" startX="-250.0" stroke="#588100" />
+                <Button fx:id="EdicionBttn" layoutX="190.0" layoutY="452.0" mnemonicParsing="false" onAction="#EdicionInformeOnAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #588100;" text="Editar" textFill="WHITE" />
+            <Label layoutX="16.0" layoutY="167.0" prefHeight="44.0" prefWidth="88.0" text="Contaminante" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="ContaminanteComboBox" layoutX="125.0" layoutY="176.0" prefHeight="25.0" prefWidth="500.0" promptText="Eliga Tipo de Contaminante:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="16.0" layoutY="215.0" prefHeight="44.0" prefWidth="88.0" text="Localidad" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="LocalidadComboBox" layoutX="123.0" layoutY="225.0" onAction="#localidadComboBoxOnAction" prefHeight="25.0" prefWidth="500.0" promptText="Eliga localidad:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="16.0" layoutY="264.0" prefHeight="44.0" prefWidth="88.0" text="Unidad Comunera" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="UnidadComuneraComboBox" layoutX="124.0" layoutY="273.0" onAction="#unidadComuneraComboBoxOnAction" prefHeight="25.0" prefWidth="501.0" promptText="Eliga Unidad Comunera:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="20.0" layoutY="313.0" prefHeight="44.0" prefWidth="88.0" text="Barrio" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <ComboBox fx:id="BarrioComboBox" layoutX="123.0" layoutY="323.0" prefHeight="25.0" prefWidth="499.0" promptText="Eliga barrio:" style="-fx-background-radius: 2em;" />
+            <ComboBox fx:id="ValoracionComboBox" layoutX="126.0" layoutY="370.0" prefHeight="25.0" prefWidth="499.0" promptText="Eliga valoracion critica:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="20.0" layoutY="119.0" prefHeight="44.0" prefWidth="88.0" text="ID del informe:" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <TextField fx:id="ID_TextField" layoutX="125.0" layoutY="129.0" prefHeight="25.0" prefWidth="498.0" promptText="Ingrese ID del informe:" style="-fx-background-radius: 2em;" />
+            <Circle fill="#ffffff00" layoutX="101.0" layoutY="66.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Circle>
+            <Circle fill="#ffffff00" layoutX="571.0" layoutY="66.0" radius="18.0" stroke="#588100" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Circle>
+            <Line endX="255.0" fill="#588100" layoutX="333.0" layoutY="26.0" startX="-250.0" stroke="#588100" />
+            <Label layoutX="281.0" layoutY="38.0" prefHeight="57.0" prefWidth="109.0" text="Edicion de Informe Ambientales" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line endX="255.0" fill="#588100" layoutX="333.0" layoutY="102.0" startX="-250.0" stroke="#588100" />
+            <ComboBox fx:id="EstadoComboBox" layoutX="126.0" layoutY="412.0" prefHeight="25.0" prefWidth="499.0" promptText="Eligir estado de revision:" style="-fx-background-radius: 2em;" />
+            <Label layoutX="20.0" layoutY="403.0" prefHeight="44.0" prefWidth="88.0" text="Estado de revision" wrapText="true">
+               <font>
+                  <Font size="12.5" />
+               </font>
+            </Label>
+            <Button fx:id="AtrasBttn" layoutX="376.0" layoutY="452.0" mnemonicParsing="false" onAction="#AtrasInformeOnAction" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #588100;" text="Atras" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+    </center>
+    <right>
+        <AnchorPane prefHeight="559.0" prefWidth="50.0" style="-fx-background-color: #588100;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#ffffff00" layoutX="25.0" layoutY="32.0" radius="18.0" stroke="#d7d7d7" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+            </children>
+        </AnchorPane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="559.0" prefWidth="50.0" style="-fx-background-color: #588100;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#ffffff00" layoutX="25.0" layoutY="32.0" radius="18.0" stroke="#d7d7d7" strokeType="INSIDE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Circle>
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>
