@@ -24,73 +24,6 @@
          <center>
             <StackPane prefHeight="629.0" prefWidth="576.0" BorderPane.alignment="CENTER">
                <children>
-                  <BorderPane fx:id="paneMiPerfil" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
-                     <top>
-                        <Pane prefHeight="115.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Mi Perfil">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras ver y editar tu perfil" textFill="#989aad" wrapText="true" />
-                              <Line endX="375.0" layoutX="137.0" layoutY="96.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrarMiPerfil" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
-                              <Line endX="368.0" endY="459.0" layoutX="147.0" layoutY="106.0" startX="-91.0" startY="459.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                           </children>
-                        </Pane>
-                     </top>
-                     <center>
-                        <AnchorPane prefHeight="486.0" prefWidth="582.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <GridPane layoutX="54.0" layoutY="6.0" prefHeight="238.0" prefWidth="438.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <TextField promptText="Ingrese su nuevo ID:" style="-fx-background-radius: 2EM;" />
-                                    <TextField prefHeight="47.0" prefWidth="219.0" promptText="Ingrese su nuevo Nombre Completo:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1">
-                                       <GridPane.margin>
-                                          <Insets left="5.0" />
-                                       </GridPane.margin>
-                                    </TextField>
-                                    <TextField promptText="Ingrese su nuevo Username:" style="-fx-background-radius: 2EM;" GridPane.rowIndex="1" />
-                                    <TextField promptText="Ingrese su nueva Password:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <GridPane.margin>
-                                          <Insets left="5.0" />
-                                       </GridPane.margin>
-                                    </TextField>
-                                    <TextField prefHeight="51.0" prefWidth="219.0" promptText="Ingrese su nueva Direccion:" style="-fx-background-radius: 2EM;" GridPane.rowIndex="3" />
-                                    <TextField promptText="Ingrese su nuevo Telefono:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                       <GridPane.margin>
-                                          <Insets left="5.0" />
-                                       </GridPane.margin>
-                                    </TextField>
-                                    <TextField promptText="Ingrese su nueva Descripcion:" style="-fx-background-radius: 2EM;" GridPane.rowIndex="2" />
-                                    <TextField promptText="Ingrese su nuevo correo:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                       <GridPane.margin>
-                                          <Insets left="5.0" />
-                                       </GridPane.margin>
-                                    </TextField>
-                                 </children>
-                              </GridPane>
-                              <ImageView fitHeight="47.0" fitWidth="42.0" layoutX="526.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/usuario.png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="426.0" layoutY="245.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" style="-fx-background-radius: 2em; -fx-background-color: #255000;" text="Editar" textFill="WHITE" />
-                           </children>
-                        </AnchorPane>
-                     </center>
-                  </BorderPane>
                   <BorderPane fx:id="paneReportes" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
                      <top>
                         <Pane prefHeight="128.0" prefWidth="582.0" BorderPane.alignment="CENTER">
@@ -102,7 +35,7 @@
                               </Label>
                               <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Puedes crear reportes" textFill="#989aad" wrapText="true" />
                               <Line endX="352.0" layoutX="148.0" layoutY="119.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
-                              <Button fx:id="btnCerrarReportes" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Button fx:id="btnCerrarReportes" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#CerrarReportesOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
                            </children>
                         </Pane>
                      </top>
@@ -157,6 +90,73 @@
                         </AnchorPane>
                      </center>
                   </BorderPane>
+                  <BorderPane fx:id="paneMiPerfil" style="-fx-background-color: #Ffffff; -fx-background-radius: 1em;">
+                     <top>
+                        <Pane prefHeight="115.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="47.0" layoutY="27.0" prefHeight="30.0" prefWidth="92.0" text="Mi Perfil">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="57.0" prefHeight="26.0" prefWidth="302.0" text="Podras ver y editar tu perfil" textFill="#989aad" wrapText="true" />
+                              <Line endX="375.0" layoutX="137.0" layoutY="96.0" startX="-100.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                              <Button fx:id="btnCerrarMiPerfil" layoutX="542.0" layoutY="15.0" mnemonicParsing="false" onAction="#CerrarMiPerfilOnAction" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #588100; -fx-background-radius: 1em;" text="x" textFill="#cdcdcd" />
+                              <Line endX="368.0" endY="459.0" layoutX="147.0" layoutY="106.0" startX="-91.0" startY="459.0" stroke="#989aad" strokeLineJoin="ROUND" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="486.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="54.0" layoutY="6.0" prefHeight="238.0" prefWidth="438.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="Id_TextField" promptText="Ingrese su ID:" style="-fx-background-radius: 2EM;" />
+                                    <TextField fx:id="Nombre_TextField" prefHeight="47.0" prefWidth="219.0" promptText="Ingrese su nuevo Nombre Completo:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="Username_TextField" promptText="Ingrese su nuevo Username:" style="-fx-background-radius: 2EM;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="password_TextField" promptText="Ingrese su nueva Password:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="direccion_Field" prefHeight="51.0" prefWidth="219.0" promptText="Ingrese su nueva Direccion:" style="-fx-background-radius: 2EM;" GridPane.rowIndex="3" />
+                                    <TextField fx:id="telefono_TextField" promptText="Ingrese su nuevo Telefono:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="descrip_TextField" promptText="Ingrese su nueva Descripcion:" style="-fx-background-radius: 2EM;" GridPane.rowIndex="2" />
+                                    <TextField fx:id="correo_TextField" promptText="Ingrese su nuevo correo:" style="-fx-background-radius: 2EM;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <ImageView fitHeight="47.0" fitWidth="42.0" layoutX="526.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/usuario.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="EditarMiPerfilButton" layoutX="426.0" layoutY="245.0" mnemonicParsing="false" onAction="#EditarMiPerfilOnAction" prefHeight="25.0" prefWidth="66.0" style="-fx-background-radius: 2em; -fx-background-color: #255000;" text="Editar" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
                </children>
             </StackPane>
          </center>
@@ -193,11 +193,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnUsuarios" mnemonicParsing="false" prefHeight="110.0" prefWidth="259.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Mi Perfil" textFill="WHITE">
+                        <Button fx:id="btnMiPerfil" mnemonicParsing="false" onAction="#MiPerfilOnAction" prefHeight="110.0" prefWidth="259.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Mi Perfil" textFill="WHITE">
                            <GridPane.margin>
                               <Insets right="10.0" />
                            </GridPane.margin></Button>
-                        <Button fx:id="btnReportes" mnemonicParsing="false" prefHeight="111.0" prefWidth="176.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1">
+                        <Button fx:id="btnReportes" mnemonicParsing="false" onAction="#ReportesOnAction" prefHeight="111.0" prefWidth="176.0" style="-fx-background-color: #255000; -fx-background-radius: 1em;" text="Reportes" textFill="WHITE" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Button>
