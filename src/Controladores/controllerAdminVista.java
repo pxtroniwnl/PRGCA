@@ -308,7 +308,7 @@ public class controllerAdminVista implements Initializable {
         EstadoInformeCol.setCellValueFactory(new PropertyValueFactory<>("estado"));
     }
 
-    //METODO PARA ACTUALIZAR LOS DATOS DEL TABLEVIEW POR CADA COLUMNA REPORTES
+    //METODO PARA ACTUALIZAR LOS DATOS DEL TABLEVIEW POR CADA COLUMNA INFORMES
     @FXML
     private void ActualizarTablaInformes(ActionEvent evt) throws SQLException {
         ListaInformes.clear();
