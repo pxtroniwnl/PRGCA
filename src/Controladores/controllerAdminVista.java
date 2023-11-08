@@ -267,7 +267,7 @@ public class controllerAdminVista implements Initializable {
     //METODO PARA CREAR REPORTES ADMIN
     @FXML
     private void CrearReporteBtnOnAction(ActionEvent e) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_EliminarInforme.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminVista_AddReporte.fxml"));
 
         Scene scene = new Scene(root);
 
